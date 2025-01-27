@@ -1,0 +1,22 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Sample :: Sample Tests                                                  
+==============================================================================
+Tests.Sample.AAAA-124 User Story to test selenium navigation :: This is a s...
+==============================================================================
+Keyword is executed once before first test in the suite
+Visualization is received correctly :: Test to check Visualization... This keyword is executed before every test
+| FAIL |
+Element with locator '' not found.
+------------------------------------------------------------------------------
+Tests.Sample.AAAA-124 User Story to test selenium navigation :: Th... | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests.Sample :: Sample Tests                                          | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Replay\Symphonyreplay\Output\pabot_results\1\Output.xml

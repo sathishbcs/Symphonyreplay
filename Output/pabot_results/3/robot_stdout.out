@@ -1,0 +1,24 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Sample :: Sample Tests                                                  
+==============================================================================
+Tests.Sample.AAAA-126 Template Calculator Test :: Tests Calculator app func...
+==============================================================================
+Addition is tested successfully through template :: Test to check ... | FAIL |
+Parent suite setup failed:
+Element '' did not appear in 5 seconds.
+------------------------------------------------------------------------------
+Tests.Sample.AAAA-126 Template Calculator Test :: Tests Calculator... | FAIL |
+Suite setup failed:
+Element '' did not appear in 5 seconds.
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests.Sample :: Sample Tests                                          | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Replay\Symphonyreplay\Output\pabot_results\3\Output.xml

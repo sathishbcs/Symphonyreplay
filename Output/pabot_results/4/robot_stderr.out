@@ -1,0 +1,6 @@
+[ ERROR ] [ DataDriver ] Error in robot file:
+  File "C:\Replay\Symphonyreplay\Tests\Sample\Datadriver\Test.robot", line 0
+[ ERROR ] In source file:
+  File "C:\Replay\Symphonyreplay\Tests\Sample\Datadriver//TextExcel.xlsx", line 0
+[ ERROR ] Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
+    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.

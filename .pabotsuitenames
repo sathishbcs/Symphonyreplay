@@ -1,0 +1,9 @@
+datasources:41727a737ac1ab6d01f4e10f0b78a3827d8968af
+commandlineoptions:11e4934db4e2c0c1919f1fe84b96bad133a03635
+suitesfrom:no-suites-from-option
+file:1c51e6dd3e51912b66bc487b8ff5b4159ebf75f3
+--suite Tests.Sample.AAAA-123 Hello World User Story
+--suite Tests.Sample.AAAA-124 User Story to test selenium navigation
+--suite Tests.Sample.AAAA-125 Calculator app tests
+--suite Tests.Sample.AAAA-126 Template Calculator Test
+--suite Tests.Sample.Datadriver.Test

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.13.1 on win32)" generated="20250127 10:59:44.461" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Replay\Symphonyreplay\Tests">
+<kw name="Setup highest level suite" type="SETUP">
+<kw name="Set Variable" library="BuiltIn">
+<var>${d.test_server}</var>
+<arg>${test_server}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250127 10:59:45.929" level="INFO">${d.test_server} = Dev</msg>
+<status status="PASS" starttime="20250127 10:59:45.928" endtime="20250127 10:59:45.929"/>
+</kw>
+<kw name="Reset screenshot count variable" library="Support">
+<kw name="Set Variable" library="BuiltIn">
+<var>${screenshotCount}</var>
+<arg>${PABOTQUEUEINDEX}_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250127 10:59:45.929" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250127 10:59:45.929" endtime="20250127 10:59:45.929"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshotCount}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250127 10:59:45.930" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250127 10:59:45.930" endtime="20250127 10:59:45.930"/>
+</kw>
+<kw name="Set up screenshot directory" library="Support">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${OUTPUTDIR}${/}${wvar('screenshot_dir')}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20250127 10:59:45.931" level="INFO">Web.Dev.screenshot_dir: Screenshot</msg>
+<msg timestamp="20250127 10:59:45.933" level="INFO" html="true">Created directory '&lt;a href="file://C:\Replay\Symphonyreplay\Output\pabot_results\0\Screenshot"&gt;C:\Replay\Symphonyreplay\Output\pabot_results\0\Screenshot&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20250127 10:59:45.930" endtime="20250127 10:59:45.933"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.930" endtime="20250127 10:59:45.933"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.929" endtime="20250127 10:59:45.934"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshot_taking}</arg>
+<arg>${True}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250127 10:59:45.934" level="INFO">${screenshot_taking} = True</msg>
+<status status="PASS" starttime="20250127 10:59:45.934" endtime="20250127 10:59:45.934"/>
+</kw>
+<kw name="Setup linux execution" library="Support">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${web_test_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${web_test}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${web_test}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20250127 10:59:45.935" endtime="20250127 10:59:45.935"/>
+</kw>
+<msg timestamp="20250127 10:59:45.935" level="INFO">${web_test_check} = True</msg>
+<status status="PASS" starttime="20250127 10:59:45.935" endtime="20250127 10:59:45.935"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${web_test_check}</arg>
+<arg>Setup Docker Execution Options</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Setup Docker Execution Options" library="Support_Web">
+<kw name="Setup Suite Metadata" library="Support_Web">
+<arg>${browser}</arg>
+<kw name="Get Browser Metadata" library="BrowserSupport">
+<var>&amp;{browser_information}</var>
+<arg>browser=${browser}</arg>
+<doc>Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}</doc>
+<msg timestamp="20250127 10:59:50.244" level="INFO">&amp;{browser_information} = { browser_version=132.0.6834.111 | driver_version=132.0.6834.110  }</msg>
+<status status="PASS" starttime="20250127 10:59:45.937" endtime="20250127 10:59:50.244"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_name</arg>
+<arg>${browser}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250127 10:59:50.245" level="INFO">Set suite metadata 'test_browser_name' to value 'chrome'.</msg>
+<status status="PASS" starttime="20250127 10:59:50.244" endtime="20250127 10:59:50.245"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_version</arg>
+<arg>${browser_information.browser_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250127 10:59:50.247" level="INFO">Set suite metadata 'test_browser_version' to value '132.0.6834.111'.</msg>
+<status status="PASS" starttime="20250127 10:59:50.246" endtime="20250127 10:59:50.247"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_driver_version</arg>
+<arg>${browser_information.driver_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250127 10:59:50.248" level="INFO">Set suite metadata 'test_driver_version' to value '132.0.6834.110 '.</msg>
+<status status="PASS" starttime="20250127 10:59:50.247" endtime="20250127 10:59:50.248"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.936" endtime="20250127 10:59:50.248"/>
+</kw>
+<kw name="Setup Global Docker Execution Options" library="Support_Web">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>None</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250127 10:59:50.249" level="INFO">${global_browser_options} = None</msg>
+<status status="PASS" starttime="20250127 10:59:50.248" endtime="20250127 10:59:50.249"/>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<var>${docker_check}</var>
+<arg>EXECUTION_ENVIRONMENT</arg>
+<arg>not_found</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<msg timestamp="20250127 10:59:50.250" level="INFO">${docker_check} = not_found</msg>
+<status status="PASS" starttime="20250127 10:59:50.250" endtime="20250127 10:59:50.250"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>"${docker_check}"!="docker"</arg>
+<arg>Log</arg>
+<arg>Not executing on Docker</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Not executing on Docker</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250127 10:59:50.251" level="INFO">Not executing on Docker</msg>
+<status status="PASS" starttime="20250127 10:59:50.250" endtime="20250127 10:59:50.251"/>
+</kw>
+<msg timestamp="20250127 10:59:50.251" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250127 10:59:50.250" endtime="20250127 10:59:50.251"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{options}</var>
+<arg>--headless</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20250127 10:59:50.251" endtime="20250127 10:59:50.251"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>@{docker_options}</arg>
+<arg>@{options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20250127 10:59:50.251" endtime="20250127 10:59:50.251"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.248" endtime="20250127 10:59:50.251"/>
+</kw>
+<kw name="Create Webdriver for chrome preferences" library="Support_Web">
+<kw name="Update Docker Execution Options" library="Support_Web">
+<var>${list_prefs}</var>
+<arg>${list_prefs}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${docker_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${docker_options}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${docker_options}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<msg timestamp="20250127 10:59:50.255" level="FAIL">Variable '${docker_options}' does not exist.</msg>
+<status status="FAIL" starttime="20250127 10:59:50.253" endtime="20250127 10:59:50.255"/>
+</kw>
+<msg timestamp="20250127 10:59:50.255" level="INFO">${docker_check} = False</msg>
+<status status="PASS" starttime="20250127 10:59:50.252" endtime="20250127 10:59:50.255"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${list_prefs_length}</var>
+<arg>${list_prefs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20250127 10:59:50.256" level="INFO">Length is 1</msg>
+<msg timestamp="20250127 10:59:50.256" level="INFO">${list_prefs_length} = 1</msg>
+<status status="PASS" starttime="20250127 10:59:50.255" endtime="20250127 10:59:50.256"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${list_prefs}</var>
+<arg>${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []</arg>
+<arg>Combine Lists</arg>
+<arg>${list_prefs}</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE IF</arg>
+<arg>${docker_check}</arg>
+<arg>Set Variable</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${list_prefs}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${list_prefs}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20250127 10:59:50.256" endtime="20250127 10:59:50.257"/>
+</kw>
+<msg timestamp="20250127 10:59:50.257" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250127 10:59:50.256" endtime="20250127 10:59:50.257"/>
+</kw>
+<msg timestamp="20250127 10:59:50.257" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250127 10:59:50.252" endtime="20250127 10:59:50.257"/>
+</kw>
+<kw name="Create Chrome Options for download preferences" library="Support_Web">
+<var>${chrome_options}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250127 10:59:50.258" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E8BED951D0&gt;</msg>
+<status status="PASS" starttime="20250127 10:59:50.257" endtime="20250127 10:59:50.258"/>
+</kw>
+<msg timestamp="20250127 10:59:50.258" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E8BED951D0&gt;</msg>
+<status status="PASS" starttime="20250127 10:59:50.257" endtime="20250127 10:59:50.258"/>
+</kw>
+<kw name="Update Preferences List" library="Support_Web">
+<arg>${chrome_options}</arg>
+<arg>@{list_prefs}</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${string_prefs}</var>
+<arg>${list_prefs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20250127 10:59:50.259" level="INFO">${string_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250127 10:59:50.259" endtime="20250127 10:59:50.259"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${string_prefs} == [[]]</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20250127 10:59:50.259" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250127 10:59:50.259" endtime="20250127 10:59:50.259"/>
+</kw>
+<for flavor="IN">
+<var>${preference}</var>
+<value>@{list_prefs}</value>
+<iter>
+<var name="${preference}"/>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${preference}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20250127 10:59:50.260" endtime="20250127 10:59:50.260"/>
+</kw>
+<status status="NOT RUN" starttime="20250127 10:59:50.260" endtime="20250127 10:59:50.260"/>
+</iter>
+<status status="NOT RUN" starttime="20250127 10:59:50.259" endtime="20250127 10:59:50.260"/>
+</for>
+<status status="PASS" starttime="20250127 10:59:50.258" endtime="20250127 10:59:50.260"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${kw_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250127 10:59:50.260" endtime="20250127 10:59:50.261"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>${chrome options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250127 10:59:50.261" level="INFO">${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E8BED951D0&gt;</msg>
+<status status="PASS" starttime="20250127 10:59:50.261" endtime="20250127 10:59:50.261"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.251" endtime="20250127 10:59:50.261"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.936" endtime="20250127 10:59:50.261"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.936" endtime="20250127 10:59:50.262"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.934" endtime="20250127 10:59:50.262"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>environment</arg>
+<arg>${test_server}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250127 10:59:50.262" level="INFO">Set suite metadata 'environment' to value 'Dev'.</msg>
+<status status="PASS" starttime="20250127 10:59:50.262" endtime="20250127 10:59:50.262"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:45.928" endtime="20250127 10:59:50.262"/>
+</kw>
+<suite id="s1-s1" name="Sample" source="C:\Replay\Symphonyreplay\Tests\Sample">
+<suite id="s1-s1-s1" name="AAAA-123 Hello World User Story" source="C:\Replay\Symphonyreplay\Tests\Sample\AAAA-123 Hello World User Story.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Keyword is executed once before first test in the suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250127 10:59:50.284" endtime="20250127 10:59:50.285"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Hello World is tested correctly" line="11">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>This keyword is executed before every test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250127 10:59:50.286" endtime="20250127 10:59:50.286"/>
+</kw>
+<kw name="Given I concatenate hello with world" library="Support_Sample">
+<kw name="Concatenates hello with world" library="Support_Sample">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${result}</arg>
+<arg>helloworld</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20250127 10:59:50.288" level="INFO">${result} = helloworld</msg>
+<status status="PASS" starttime="20250127 10:59:50.287" endtime="20250127 10:59:50.288"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.287" endtime="20250127 10:59:50.289"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.286" endtime="20250127 10:59:50.289"/>
+</kw>
+<kw name="Then I receive result as helloworld" library="Support_Sample">
+<kw name="Results received as helloworld" library="Support_Sample">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>helloworld</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20250127 10:59:50.290" endtime="20250127 10:59:50.290"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.289" endtime="20250127 10:59:50.290"/>
+</kw>
+<status status="PASS" starttime="20250127 10:59:50.289" endtime="20250127 10:59:50.291"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>This keyword is executed after every test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250127 10:59:50.291" endtime="20250127 10:59:50.291"/>
+</kw>
+<doc>Test to check that the setup is working currently through string</doc>
+<tag>AAAA-123</tag>
+<tag>debug_listener_messages</tag>
+<tag>helloworld</tag>
+<tag>regression</tag>
+<tag>Sample</tag>
+<tag>SampleTest</tag>
+<status status="PASS" starttime="20250127 10:59:50.285" endtime="20250127 10:59:50.291"/>
+</test>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Keyword is executed once after last test in the suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250127 10:59:50.292" endtime="20250127 10:59:50.292"/>
+</kw>
+<doc>Checks for setup to work correctly. Jira-ID: AAAA-123</doc>
+<status status="PASS" starttime="20250127 10:59:50.265" endtime="20250127 10:59:50.292"/>
+</suite>
+<doc>Sample Tests</doc>
+<status status="PASS" starttime="20250127 10:59:50.262" endtime="20250127 10:59:50.384"/>
+</suite>
+<doc>Testing functionality through Robot Framework</doc>
+<meta name="environment">Dev</meta>
+<meta name="test_browser_name">chrome</meta>
+<meta name="test_browser_version">132.0.6834.111</meta>
+<meta name="test_driver_version">132.0.6834.110 </meta>
+<meta name="test_environment">Dev</meta>
+<meta name="test_freeze_dependencies">astroid==3.3.8,attrs==25.1.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.12.14,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,colorama==0.4.6,cryptography==44.0.0,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.12,GitPython==3.1.44,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.5,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pathspec==0.11.2,pillow==11.1.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.19.1,pylint==3.3.3,PySocks==1.7.1,pywin32==308,PyYAML==6.0.2,referencing==0.36.2,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.22.3,selenium==4.9.1,setuptools==75.8.0,smmap==5.0.2,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.28.0,trio-websocket==0.11.1,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1,wrapt==1.17.2,wsproto==1.2.0</meta>
+<status status="PASS" starttime="20250127 10:59:45.312" endtime="20250127 10:59:50.384"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AAAA-123</stat>
+<stat pass="1" fail="0" skip="0">debug_listener_messages</stat>
+<stat pass="1" fail="0" skip="0">helloworld</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">Sample</stat>
+<stat pass="1" fail="0" skip="0">SampleTest</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Sample">Tests.Sample</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="AAAA-123 Hello World User Story">Tests.Sample.AAAA-123 Hello World User Story</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
