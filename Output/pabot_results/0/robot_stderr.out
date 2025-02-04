@@ -1,0 +1,20 @@
+[ ERROR ] Processing variable file 'D:\Replay\Symphonyreplay\Execution\Access_Data.py' failed: Importing variable file 'D:\Replay\Symphonyreplay\Execution\Access_Data.py' failed: ImportError: cannot import name 'Dev' from partially initialized module 'Data.Symphony' (most likely due to a circular import) (D:\Replay\Symphonyreplay\Data\Symphony\__init__.py)
+Traceback (most recent call last):
+  File "D:\Replay\Symphonyreplay\Execution\Access_Data.py", line 15, in <module>
+    import Data.Symphony as Sym
+  File "D:\Replay\Symphonyreplay\Data\Symphony\__init__.py", line 1, in <module>
+    from . import Dev
+PYTHONPATH:
+  D:\Replay\Symphonyreplay\Execution
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Scripts\robot.exe
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Scripts\python313.zip
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\win32
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\win32\lib
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\Pythonwin
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\setuptools\_vendor
+  D:\Replay\Symphonyreplay

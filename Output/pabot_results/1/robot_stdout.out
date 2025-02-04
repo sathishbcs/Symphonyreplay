@@ -1,22 +1,46 @@
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                        
 ==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\__init__.robot:3
+      Setup highest level suite    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\__init__.robot:10
+      Reset screenshot count variable    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Support.robot:53
+      Set up screenshot directory    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Support.robot:19
+      Create Directory    ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
+      |  ${OUTPUTDIR}${/}${wvar('screenshot_dir')} = <Unable to define variable value>
+______________________________________________________________________________
 Tests.Sample :: Sample Tests                                                  
 ==============================================================================
 Tests.Sample.AAAA-124 User Story to test selenium navigation :: This is a s...
 ==============================================================================
-Keyword is executed once before first test in the suite
-Visualization is received correctly :: Test to check Visualization... This keyword is executed before every test
-| FAIL |
-Element with locator '' not found.
+Visualization is received correctly :: Test to check Visualization... | FAIL |
+Parent suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
 ------------------------------------------------------------------------------
 Tests.Sample.AAAA-124 User Story to test selenium navigation :: Th... | FAIL |
+Parent suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+
 1 test, 0 passed, 1 failed
 ==============================================================================
 Tests.Sample :: Sample Tests                                          | FAIL |
+Parent suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+
 1 test, 0 passed, 1 failed
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                | FAIL |
+Suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+
 1 test, 0 passed, 1 failed
 ==============================================================================
-Output:  C:\Replay\Symphonyreplay\Output\pabot_results\1\Output.xml
+Output:  D:\Replay\Symphonyreplay\Output\pabot_results\1\Output.xml
