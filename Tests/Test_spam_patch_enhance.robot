@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../Tests/Resource/Spam_Patch_enhance.robot
-Task Tags   spampatchenhance
+Test Tags   spampatchenhance
 Suite Setup    Spam_Patch_enhance.System Logon
 # Suite Teardown    Spam_Patch_enhance.System Logout
   
