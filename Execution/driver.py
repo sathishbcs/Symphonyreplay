@@ -24,7 +24,6 @@ class Driver(object):
         self.logger = logger_handler.setup('Robot.Driver')
         self.setup_options = None
         self.args = None
-
     def parse_arguments(self):
         """
         Parses arguments passed from command line. This can be overridden

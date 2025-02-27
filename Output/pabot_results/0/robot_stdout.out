@@ -1,0 +1,45 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch enhance                                                 
+==============================================================================
+Check_Spam_update                                                       
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:9
+    T:  Check_Spam_update    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:14
+      Spam software selection    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch_enhance.robot:78
+      Spam Multiple Patch Version Select    ${comp_id}    ${search_comp}    ${search_patch}
+      |  ${comp_id} = wnd[1]/usr/tabsQUEUE_CALC/tabpQUEUE_CALC_FC1/ssubQUEUE_CALC_SCA:SAPLOCS_ALV_UI:0306/cntlCONTROL_ALL_COMP/shellcont/shell (str)
+      |  ${search_comp} = ST-A/PI (str)
+      |  ${search_patch} = SAPKITABC8 (str)
+______________________________________________________________________________
+| FAIL |
+ValueError: malformed node or string on line 1: <ast.Name object at 0x00000172F1955210>
+------------------------------------------------------------------------------
+Import Queue                                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:17
+    T:  Import Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:18
+      Importing queue from support package    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch_enhance.robot:101
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+Tests.Test spam patch enhance                                         | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\pabot_results\0\Output.xml

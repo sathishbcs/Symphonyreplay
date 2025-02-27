@@ -1,9 +1,5 @@
-datasources:56a2d5f2aa0c40c0833f85858b0ba3cf3decd91c
-commandlineoptions:2d1a54bd68b1975d1e97a303282839c3f1cfb063
+datasources:d5695e8a247146b0681b211b142c3b4c97dce76e
+commandlineoptions:4086179043fbb96c099fa6ac9665a7fbbd0c25bc
 suitesfrom:no-suites-from-option
-file:d585e09a15521b7f3e2f49ba4b0ea0c1c6ed8453
---suite Tests.Sample.AAAA-123 Hello World User Story
---suite Tests.Sample.AAAA-124 User Story to test selenium navigation
---suite Tests.Sample.AAAA-125 Calculator app tests
---suite Tests.Sample.AAAA-126 Template Calculator Test
---suite Tests.Sample.Datadriver.Test
+file:3bb59df3f952228996d9943abefdc74d7de14ffd
+--suite Tests.Test spam patch enhance
