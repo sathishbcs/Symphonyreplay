@@ -1,8 +1,8 @@
 EXE_PAD = "C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.exe"
-Connection_Name = "M4D"
+Connection_Name = "PRD"
 SAP_CLIENT = "000"
-SAP_USER = "Xperi-tech"
-SAP_PASSWORD = "Xperi000!2"
+SAP_USER = "ddic"
+SAP_PASSWORD = "r7Jz1tRqd85J"
 # addOn = ["BNWVS",    "ST-A/PI"]     
 # Patch = ["SAPK-70001INBNWVS",    "SAPKITABC5"]
 # patch_comp = ["ST-PI", "ST-A/PI"]
@@ -10,4 +10,4 @@ SAP_PASSWORD = "Xperi000!2"
 # search_comp = ["ST-PI",    "BNWVS",    "ST-A/PI"]
 # search_patch = ["SAPK-74003INSTPI",    "SAPK-70001INBNWVS",    "SAPKITABC5"]
 search_comp = "ST-A/PI"
-search_patch = "SAPKITABC8"
+search_patch = "K-01VC3INSSA"

@@ -8,8 +8,6 @@ from robot.api import logger
 import sys
 import ast
 
-
-
 class CustomSapGuiLibrary:
     """The SapGuiLibrary is a library that enables users to create tests for the Sap Gui application
 
@@ -815,7 +813,7 @@ class CustomSapGuiLibrary:
     def is_imp_notes_existing(self, modal_window_id, modal_continue_id):   
         try:
             content = self.session.findById(modal_window_id).Text
-            if content == "SAINT: Important SAP Notes":
+            if content == "SPAM: Important SAP Notes":
                 print("Modal window exists")
                 self.session.findById(modal_continue_id).press()
                 return content
@@ -1155,6 +1153,34 @@ class CustomSapGuiLibrary:
         try:
             content = self.session.findById(window_id).Text
             if content == text:
+                print("Window exists")
+                # self.take_screenshot()
+                self.session.findById(continue_id).press()
+                return content
+            else:
+                print("window does not exist.")
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            return False
+
+    def is_spam_user_defined_existing(self, window_id, continue_id):   
+        try:
+            content = self.session.findById(window_id).Text
+            if content == "SPAM: User-defined stop":
+                print("Window exists")
+                # self.take_screenshot()
+                self.session.findById(continue_id).press()
+                return content
+            else:
+                print("window does not exist.")
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            return False
+ 
+    def is_errors_during_disassembling_existing(self, window_id, continue_id):   
+        try:
+            content = self.session.findById(window_id).Text
+            if content == "Errors during Disassembling OCS Packages":
                 print("Window exists")
                 # self.take_screenshot()
                 self.session.findById(continue_id).press()

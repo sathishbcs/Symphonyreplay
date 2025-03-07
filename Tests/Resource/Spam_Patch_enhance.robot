@@ -3,6 +3,7 @@ Library    Process
 Library    OperatingSystem
 Library    String
 Library    CustomSapGuiLibrary.py
+Library    PDF.py
 
 *** Variables ***
 # ${search_comp}      ["ST-PI",    "BNWVS",    "ST-A/PI"]
@@ -19,7 +20,8 @@ ${finish_str}   Confirm queue
 ${refresh_id}   wnd[0]/tbar[1]/btn[30]
 ${button_id}    wnd[0]/mbar/menu[0]/menu[5]
 ${comp_id}    wnd[1]/usr/tabsQUEUE_CALC/tabpQUEUE_CALC_FC1/ssubQUEUE_CALC_SCA:SAPLOCS_ALV_UI:0306/cntlCONTROL_ALL_COMP/shellcont/shell
-
+${screenshot_directory}     ${OUTPUT_DIR}
+${output_pdf}   ${OUTPUT_DIR}\\output.pdf
 
 *** Keywords *** 
 System Logon
@@ -52,84 +54,186 @@ Spam Transaction
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
     Sleep    2
-    Take Screenshot    C01_Certificate.jpg
-
+    Take Screenshot   002_Certificate.jpg
+ 
 Loading package    
     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
     Sleep    2
-    Take Screenshot    D01_Load_1.jpg
+    Take Screenshot    003_Load_1.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnSPOP-OPTION1
     Sleep    2
-    Take Screenshot    D02_Load_2.jpg
+    Take Screenshot    004_Load_2.jpg
     CustomSapGuiLibrary.Click Element    wnd[0]/tbar[0]/btn[3]
     Sleep    2
-    Take Screenshot    D03_Load_3.jpg
-
+    Take Screenshot    005_Load_3.jpg
+ 
 Display/Define
     CustomSapGuiLibrary.Click Element    wnd[0]/usr/btnPAT100-QUEUE
     Sleep    2
-    Take Screenshot    E01_Display.jpg
-
-Spam software selection
-    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[7]
+    Take Screenshot    006_Display.jpg
+Spam Component selection
+    ${row}    CustomSapGuiLibrary.Select Spam Based On Text    wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell     ${search_comp} 
+    Log    ${row}
+    Take Screenshot    007_Spam_component1.jpg
+    Select Table Row    wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell    ${row}
     Sleep    2
-    Take Screenshot    F01_patch_1.jpg
-    # CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${symvar('search_comp')}    ${symvar('search_patch')}
-    CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${search_comp}    ${search_patch}
-    Sleep    4
-    Take Screenshot    F02_patch_2.jpg
+    Take Screenshot    008_Spam_component2.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+    Sleep   2
+    Take Screenshot    009_Spam_component3.jpg
+ 
+Spam Patch selection
+    ${patch_value}  CustomSapGuiLibrary.Spam Search and Select Label    wnd[1]/usr  ${search_patch} 
+    Log    ${patch_value}   
     Sleep    2
-    Take Screenshot    F03_patch_3.jpg
+    Take Screenshot    010_patch_select1.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
-    Sleep    2
-    Take Screenshot    F04_patch_4.jpg
-
+    Sleep   2
+    Take Screenshot    011_patch_select2.jpg
+ 
 Important SAP note handling
-    CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/tbar[0]/btn[0]
-    Take Screenshot    G01_SAP_note.jpg
-    CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
-   
+    # CustomSapGuiLibrary.Is Imp Notes Existing  wnd[1]  wnd[1]/tbar[0]/btn[0]
+    # Sleep   2
+    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+    Take Screenshot    012_SAP_note.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
-    Take Screenshot  G02_Modification.jpg  
-   
+    Sleep   2
+    Take Screenshot    013_Modification.jpg  
 Importing queue from support package
     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[3]
-    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
-    Take Screenshot    H01_Imp_que_1.jpg
-    #import queue-start options
+    Sleep   2
+    Take Screenshot    014_Imp_que_1.jpg
+    CustomSapGuiLibrary.Is Imp Notes Existing  wnd[1]  wnd[1]/tbar[0]/btn[0]
+    Sleep   2
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[27] 
-    Take Screenshot    H02_Start_options.jpg
-
-    #CLicking "Start in background immediately"
-    Sleep   1
-    CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC1/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0701/radLAY0700-RB1_BTCHIM
-    Sleep   1
-    Take Screenshot    H03_Start_bkgd.jpg
+    Sleep   2
+    Take Screenshot    015_Imp_que_2.jpg
+ 
+Start Options
+    CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC1/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0701/radLAY0700-RB1_DIA
+    Sleep   2
+    Take Screenshot    016_prep_dial.jpg
+    CustomSapGuiLibrary.Click Element    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2
+    Sleep   2
+    Take Screenshot    017_import_select.jpg
+    CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0702/radLAY0700-RB2_BTCHIM
+    Sleep   2
+    Take Screenshot    018_import_bkgd.jpg
+ 
+Import Option
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep   1
-    Take Screenshot    H04_Start_bkgd_2.jpg    
+    Take Screenshot    019_import1.jpg    
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[25]
-    Take Screenshot    H05_Start_bkgd_3.jpg
-    Sleep    1
-
-
-Confirm Queue    
+    Take Screenshot    020_import2.jpg
+    Sleep    2
+    # CustomSapGuiLibrary.is errors during disassembling existing    wnd[0]   wnd[0]/tbar[1]/btn[20]
+    # Sleep    2
+    # Take Screenshot    021_ignore.jpg
+    CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
+    Sleep    2
+    Take Screenshot    022_User_defined.jpg
+ 
+Confirm Queue
     ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${button_id}    ${status_line}    ${refresh_id}
     Log    ${cell_text_1}
-    #CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[5]
-    Take Screenshot    G01_Confirmed_queue.jpg
-    #Status check: No queue has been defined
+    Sleep   2
+    Take Screenshot    023_Confirmed_queue.jpg
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
-    Take Screenshot    G02_Status_Confirmed_queue1.jpg
-    #Click DoNOTSEND
-    Window Handling    wnd[0]    Preimported Transport Requests in TMS Queue   wnd[0]/tbar[1]/btn[20]
-    Take Screenshot    TMSQ.jpg
+    Sleep   2
+    Take Screenshot    024_Status_Confirmed_queue1.jpg
     CustomSapGuiLibrary.Click Element   wnd[1]/tbar[0]/btn[27]
-    Take Screenshot    G03_Status_Confirmed_queue2.jpg
-
+    Sleep   2
+    Take Screenshot    025_Status_Confirmed_queue2.jpg
+ 
 System Logout
     Run Transaction   /nex
-    Sleep    5
-    Take Screenshot    logoutpage.jpg
+    Sleep    2
+    Create Pdf    ${screenshot_directory}   ${output_pdf}    
+    Sleep   2
+
+
+# Certificate Verification
+#     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
+#     Sleep    2
+#     Take Screenshot    C01_Certificate.jpg
+
+# Loading package    
+#     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
+#     Sleep    2
+#     Take Screenshot    D01_Load_1.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnSPOP-OPTION1
+#     Sleep    2
+#     Take Screenshot    D02_Load_2.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[0]/tbar[0]/btn[3]
+#     Sleep    2
+#     Take Screenshot    D03_Load_3.jpg
+
+# Display/Define
+#     CustomSapGuiLibrary.Click Element    wnd[0]/usr/btnPAT100-QUEUE
+#     Sleep    2
+#     Take Screenshot    E01_Display.jpg
+
+# Spam software selection
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[7]
+#     Sleep    2
+#     Take Screenshot    F01_patch_1.jpg
+#     # CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${symvar('search_comp')}    ${symvar('search_patch')}
+#     CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${search_comp}    ${search_patch}
+#     Sleep    4
+#     Take Screenshot    F02_patch_2.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+#     Sleep    2
+#     Take Screenshot    F03_patch_3.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+#     Sleep    2
+#     Take Screenshot    F04_patch_4.jpg
+
+# Important SAP note handling
+#     CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/tbar[0]/btn[0]
+#     Take Screenshot    G01_SAP_note.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
+   
+#     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
+#     Take Screenshot  G02_Modification.jpg  
+   
+# Importing queue from support package
+#     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[3]
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+#     Take Screenshot    H01_Imp_que_1.jpg
+#     #import queue-start options
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[27] 
+#     Take Screenshot    H02_Start_options.jpg
+
+#     #CLicking "Start in background immediately"
+#     Sleep   1
+#     CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC1/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0701/radLAY0700-RB1_BTCHIM
+#     Sleep   1
+#     Take Screenshot    H03_Start_bkgd.jpg
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+#     Sleep   1
+#     Take Screenshot    H04_Start_bkgd_2.jpg    
+#     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[25]
+#     Take Screenshot    H05_Start_bkgd_3.jpg
+#     Sleep    1
+
+
+# Confirm Queue    
+#     ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${button_id}    ${status_line}    ${refresh_id}
+#     Log    ${cell_text_1}
+#     #CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[5]
+#     Take Screenshot    G01_Confirmed_queue.jpg
+#     #Status check: No queue has been defined
+#     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
+#     Take Screenshot    G02_Status_Confirmed_queue1.jpg
+#     #Click DoNOTSEND
+#     Window Handling    wnd[0]    Preimported Transport Requests in TMS Queue   wnd[0]/tbar[1]/btn[20]
+#     Take Screenshot    TMSQ.jpg
+#     CustomSapGuiLibrary.Click Element   wnd[1]/tbar[0]/btn[27]
+#     Take Screenshot    G03_Status_Confirmed_queue2.jpg
+
+# System Logout
+#     Run Transaction   /nex
+#     Sleep    5
+#     Take Screenshot    logoutpage.jpg
 

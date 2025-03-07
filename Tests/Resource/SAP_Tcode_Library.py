@@ -812,10 +812,10 @@ class SAP_Tcode_Library:
     
     #New scripts
         
-    def is_imp_notes_existing(self, modal_window_id, modal_continue_id):   
+    def is_imp_spam_notes_existing(self, modal_window_id, modal_continue_id):   
         try:
             content = self.session.findById(modal_window_id).Text
-            if content == "SAINT: Important SAP Notes":
+            if content == "SPAM: Important SAP Notes":
                 print("Modal window exists")
                 self.session.findById(modal_continue_id).press()
                 return content
