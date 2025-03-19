@@ -825,48 +825,6 @@ class CustomSapGuiLibrary:
             print(f"Error: {str(e)}")
             return False
         
-    def get_finish_cell_text(self, finish_str, button_id, status_line, refresh_id):
-        try:
-            while True:
-                cell_text_1 = self.session.findById(status_line).Text
-                cell_text_2 = cell_text_1[1:]
-
-                if finish_str == cell_text_2:
-                    self.session.findById(button_id).press()
-                    print("Installation Successful")
-                    break  # Exit the loop if the condition is met
-                else:
-                    self.session.findById(refresh_id).press()
-                    #print("No Match")
-                    time.sleep(60)
-
-            return cell_text_2
-            
-        except Exception as e:
-            return f"Error: {str(e)}"
-            # return cell_text_2
-             
-    def get_finish_cell_text1(self, finish_str, button_id, status_line, refresh_id):
-        try:
-            while True:
-                cell_text_1 = self.session.findById(status_line).Text
-                # cell_text_2 = cell_text_1
-
-                if finish_str == cell_text_1:
-                    self.session.findById(button_id).select()
-                    print("Installation Successful")
-                    break  # Exit the loop if the condition is met
-                else:
-                    self.session.findById(refresh_id).press()
-                    #print("No Match")
-                    time.sleep(30)
-
-            return cell_text_1
-
-        except Exception as e:
-            return f"Error: {str(e)}"
-            # return cell_text_2
- 
     def get_maintenance_certificate_text(self, certificate_id):
         try:
             found = False
@@ -1082,38 +1040,34 @@ class CustomSapGuiLibrary:
             return f"Error: {e}"
     
     def spam_multiple_patch_version_select(self, comp_id, search_comp_1, search_patch_1):
-        search_comp = ast.literal_eval(search_comp_1)
-        search_patch = ast.literal_eval(search_patch_1)
-        if not len(search_comp) == len(search_patch):
-            sys.exit()
-        
-        comp_area = self.session.FindById(comp_id)
-        row_count = comp_area.RowCount
-
-        for i in range(len(search_comp)):
-            comp = search_comp[i]
-            patch = search_patch[i]
-
-            try:
-                for x in range(row_count + 1):
-                    cell_value = comp_area.GetCellValue(x, "COMPONENT")
-                    if cell_value == comp:
-                        comp_area.modifyCell(x,"PATCH_REQ",patch)
-            except Exception as e:
-                print(e)
-
-    def multiple_logon_handling(self, logon_window_id, logon_id, continue_id):  
         try:
-            content = self.session.findById(logon_window_id).Text
-            if content == "License Information for Multiple Logons":
-                print("Multiple logon exists")
-                self.session.findById(logon_id).selected = True
-                self.session.findById(continue_id).press()
-                return content
-            else:
-                print("Multiple logon does not exist.")
+            search_comp = ast.literal_eval(search_comp_1) if isinstance(search_comp_1, str) else search_comp_1
+            search_patch = ast.literal_eval(search_patch_1) if isinstance(search_patch_1, str) else search_patch_1
+
+            if not isinstance(search_comp, list) or not isinstance(search_patch, list):
+                raise ValueError("Inputs must be lists.")
+
+            if len(search_comp) != len(search_patch):
+                sys.exit("Component and patch lists must have the same length.")
+
+            comp_area = self.session.FindById(comp_id)
+            row_count = comp_area.RowCount
+
+            for i in range(len(search_comp)):
+                comp = search_comp[i]
+                patch = search_patch[i]
+
+                try:
+                    for x in range(row_count + 1):
+                        cell_value = comp_area.GetCellValue(x, "COMPONENT")
+                        if cell_value == comp:
+                            comp_area.modifyCell(x, "PATCH_REQ", patch)
+                except Exception as e:
+                    print(f"Error modifying cell: {e}")
+
         except Exception as e:
-            return f"Error: {e}"   
+            print(f"Error: {e}")
+  
 
     def find_addon_rows(self, comp_id, search_comp): 
         
@@ -1176,6 +1130,70 @@ class CustomSapGuiLibrary:
         except Exception as e:
             print(f"Error: {str(e)}")
             return False
+        
+    def is_saint_user_defined_existing(self, window_id, continue_id):   
+        try:
+            content = self.session.findById(window_id).Text
+            if content == "SAINT: User-defined stop":
+                print("Window exists")
+                # self.take_screenshot()
+                self.session.findById(continue_id).press()
+                return content
+            else:
+                print("window does not exist.")
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            return False
+        
+
+    def get_finish_cell_text1(self, finish_str, button_id, status_line, refresh_id):
+
+        try:
+
+            while True:
+
+                cell_text_1 = self.session.findById(status_line).Text
+
+                # cell_text_2 = cell_text_1
+ 
+                if finish_str == cell_text_1:
+
+                    self.session.findById(button_id).select()
+
+                    print("Installation Successful")
+
+                    break  # Exit the loop if the condition is met
+
+                else:
+
+                    self.session.findById(refresh_id).press()
+
+                    #print("No Match")
+
+                    time.sleep(30)
+ 
+            return cell_text_1
+ 
+        except Exception as e:
+
+            return f"Error: {str(e)}"
+
+            # return cell_text_2
+ 
+        
+    def is_saint_Installation_status(self, window_id, continue_id):   
+        try:
+            content = self.session.findById(window_id).Text
+            if content == "SAINT: Installation status":
+                print("Window exists")
+                # self.take_screenshot()
+                self.session.findById(continue_id).press()
+                return content
+            else:
+                print("window does not exist.")
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            return False
  
     def is_errors_during_disassembling_existing(self, window_id, continue_id):   
         try:
@@ -1190,3 +1208,113 @@ class CustomSapGuiLibrary:
         except Exception as e:
             print(f"Error: {str(e)}")
             return False
+    def search_and_select_addon_rows(self, component):
+        com_text = "wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0104/tblSAPLSAINT_UIADDON_TO_INSTALL/txtWA_ADDON_TO_INSTALL-DISP_NAME[0,"
+       
+        try:
+            for i in range(0, 100):
+                com_id = f"{com_text}{i}]"  # Construct the complete component ID
+                print(com_id)
+                component_value = self.session.findById(com_id).Text
+                print(component_value)
+                if component == component_value:
+                    return i
+        except Exception as e:
+            print(f"An error occurred while expanding node: {e}")
+ 
+           
+ 
+    def saint_select(self, patch_id, Patch):    
+        self.session.findById(patch_id).key = Patch
+    
+    def multiple_logon_handling(self, logon_window_id, option):  
+        try:
+            content = self.session.findById(logon_window_id).Text
+            if content in ["License Information for Multiple Logons", "License Information for Multiple Logon"]:
+                # print("Multiple logon exists")
+                self.session.findById(option).selected = True
+                button = "wnd[1]/tbar[0]/btn[0]"
+                self.session.findById(button).press()
+                info = "Multiple logon found. Please terminate all the logon & proceed"
+                return info
+            else:
+                info = "Multiple logon does not exist."
+                return info
+        except Exception as e:
+            print(f"Error: {e}")    
+
+
+    def get_finish_cell_text(self, finish_str, interrupt_str1, interrupt_str2, button_id, status_line, refresh_id, continue_id, startoption_id, radio_button_id, startoptionok_id, import_id, error_button_id):
+        try:
+            while True:
+                cell_text_1 = self.session.findById(status_line).Text
+                print(cell_text_1)
+                self.take_screenshot()
+                cell_text_2 = cell_text_1[1:]  # Removing the first character
+                print(cell_text_2)
+                self.take_screenshot()
+                if finish_str == cell_text_2:
+                    print(finish_str, cell_text_2)
+                    self.session.findById(button_id).press()
+                    print("Installation Successful")
+                    break  # Exit loop when condition is met
+                          
+                elif interrupt_str1 == cell_text_2 or interrupt_str2 == cell_text_2:
+                    print(interrupt_str1, cell_text_2)
+                    print(interrupt_str2, cell_text_2)
+                    self.take_screenshot()
+                    self.session.findById(continue_id).press()
+                    time.sleep(2)
+                    self.take_screenshot()
+                    print("Interruption caused")
+                    self.start_options_window_in_saint(startoption_id)
+                    self.session.findById(radio_button_id).setFocus()
+                    self.session.findById(radio_button_id).selected = True
+                    self.take_screenshot()
+                    time.sleep(2)
+                    self.session.findById(startoptionok_id).press()
+                    self.take_screenshot()
+                    time.sleep(2)
+
+                    self.session.findById(import_id).press()
+                    time.sleep(2)
+                    print("Interruption resolved and process continued")
+                    self.handle_error_window_in_saint(error_button_id)
+                        
+                else:
+                    self.session.findById(refresh_id).press()
+                    print("No match, refreshing...")
+                    time.sleep(60)  # Avoid excessive SAP requests
+    
+            return cell_text_2  # Ensure function always returns the last status
+    
+        except Exception as e:
+            print(f"Error: {str(e)}")  # Print the error for debugging
+            return f"Error: {str(e)}"  
+
+    def start_options_window_in_saint(self, startoption_id):
+        window_id = "wnd[1]"
+        expected_title = "SAINT: Add-on installation"
+        try:
+            actual_title = self.session.findById(window_id).Text.strip()
+            print(f"Window title found: {actual_title}")
+            if expected_title in actual_title:
+                self.session.findById(startoption_id).press()
+                print("Start Option button pressed.")
+            else:
+                print(f"Title mismatch. Expected: '{expected_title}', but got: '{actual_title}'")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+    def handle_error_window_in_saint(self, error_button_id):
+        element_id = "wnd[0]/titl"
+        text = "Information on Modified Objects"
+        try:
+            title = self.session.findById(element_id).Text
+            if title == text :
+                self.session.findById(error_button_id).press()
+            else:
+                print(f"Title did not match expected window title.")
+        
+        except Exception as e:
+            print(f"An error occurred: {e}")

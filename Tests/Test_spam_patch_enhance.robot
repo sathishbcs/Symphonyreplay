@@ -11,10 +11,7 @@ Check_Spam_update
     Certificate Verification
     Loading package
     Display/Define
-    Spam Component selection
-    Spam Patch selection
-
-    # Spam software selection
+    Spam software selection
     Important SAP note handling
 
 Import Queue
@@ -22,13 +19,3 @@ Import Queue
     Start Options
     Import Option
     Confirm Queue
-
-
-
-
-    
-
-
-
-
-

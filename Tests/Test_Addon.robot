@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../Tests/Resource/Addon.robot
-Task Tags   RBTLOGIN
+Test Tags   RBTLOGIN
 Suite Setup    Addon.System Logon
 Suite Teardown    Addon.System Logout
  
@@ -13,7 +13,8 @@ Check_Saint Transation Code
 Selecting the path for the Addon
     Patch selection for the Addon
     Important SAP note handling
-    FOR ST/BNWVS 
+    Start Options  
+    Import Option
 
 Process Until Finish Button Visible
     Process Until Finish Button Visible
