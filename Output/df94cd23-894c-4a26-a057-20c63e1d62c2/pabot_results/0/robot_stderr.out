@@ -1,0 +1,18 @@
+[ ERROR ] Error in file 'D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot' on line 6: Importing library 'D:\Replay\Symphonyreplay\Tests\Resource\PDF.py' failed: ModuleNotFoundError: No module named 'reportlab'
+Traceback (most recent call last):
+  File "D:\Replay\Symphonyreplay\Tests\Resource\PDF.py", line 2, in <module>
+    from reportlab.lib.pagesizes import A4
+PYTHONPATH:
+  D:\Replay\Symphonyreplay\Tests\Resource
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Scripts\robot.exe
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Scripts\python313.zip
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python313
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\win32
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\win32\lib
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\Pythonwin
+  D:\Replay\Symphonyreplay\RoboEnvironment\Symphony\Lib\site-packages\setuptools\_vendor
+  D:\Replay\Symphonyreplay

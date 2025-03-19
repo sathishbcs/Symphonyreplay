@@ -826,17 +826,20 @@ class CustomSapGuiLibrary:
     #         return False
     
     def is_imp_notes_existing(self, modal_window_id, modal_continue_id):  
+        expected_text = "SPAM: Important SAP Notes"
         try:
-            content = self.session.findById(modal_window_id).Text.strip()
-            if content == "SPAM: Important SAP Notes":
-                print("Modal window exists")
+            actual_text = self.session.findById(modal_window_id).Text.strip()
+            print(f"Modal window text found: {actual_text}")
+            if expected_text in actual_text:
+                print("Modal window exists.")
                 self.session.findById(modal_continue_id).press()
-                return content
+                print("Continue button pressed.")
+                return actual_text
             else:
-                print("Modal window does not exist.")
+                print(f"Text mismatch. Expected: '{expected_text}', but got: '{actual_text}'")
                 return None
         except Exception as e:
-            print(f"Error: {str(e)}")
+            print(f"An error occurred: {e}")
             return False
     
     def get_maintenance_certificate_text(self, certificate_id):
