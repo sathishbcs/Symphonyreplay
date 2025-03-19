@@ -810,21 +810,35 @@ class CustomSapGuiLibrary:
     
     #New scripts
         
-    def is_imp_notes_existing(self, modal_window_id, modal_continue_id):   
+    # def is_imp_notes_existing(self, modal_window_id, modal_continue_id):   
+    #     try:
+    #         content = self.session.findById(modal_window_id).Text
+    #         if content == "SPAM: Important SAP Notes":
+    #             print("Modal window exists")
+    #             self.session.findById(modal_continue_id).press()
+    #             return content
+    #         else:
+    #             print("Modal window does not exist.")
+            
+
+    #     except Exception as e:
+    #         print(f"Error: {str(e)}")
+    #         return False
+    
+    def is_imp_notes_existing(self, modal_window_id, modal_continue_id):  
         try:
-            content = self.session.findById(modal_window_id).Text
+            content = self.session.findById(modal_window_id).Text.strip()
             if content == "SPAM: Important SAP Notes":
                 print("Modal window exists")
                 self.session.findById(modal_continue_id).press()
                 return content
             else:
                 print("Modal window does not exist.")
-            
-
+                return None
         except Exception as e:
             print(f"Error: {str(e)}")
             return False
-        
+    
     def get_maintenance_certificate_text(self, certificate_id):
         try:
             found = False

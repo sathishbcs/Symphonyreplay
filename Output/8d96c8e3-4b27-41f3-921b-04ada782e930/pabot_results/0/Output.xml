@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.13.1 on win32)" generated="20250319 12:02:59.149" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\Replay\Symphonyreplay\Tests">
+<kw name="Setup highest level suite" type="SETUP">
+<kw name="Set Variable" library="BuiltIn">
+<var>${d.test_server}</var>
+<arg>${test_server}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250319 12:02:59.988" level="INFO">${d.test_server} = Dev</msg>
+<status status="PASS" starttime="20250319 12:02:59.987" endtime="20250319 12:02:59.988"/>
+</kw>
+<kw name="Reset screenshot count variable" library="Support">
+<kw name="Set Variable" library="BuiltIn">
+<var>${screenshotCount}</var>
+<arg>${PABOTQUEUEINDEX}_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250319 12:02:59.989" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250319 12:02:59.989" endtime="20250319 12:02:59.989"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshotCount}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250319 12:02:59.990" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250319 12:02:59.989" endtime="20250319 12:02:59.990"/>
+</kw>
+<kw name="Set up screenshot directory" library="Support">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${OUTPUTDIR}${/}${wvar('screenshot_dir')}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20250319 12:02:59.991" level="INFO">Web.Dev.screenshot_dir: Screenshot</msg>
+<msg timestamp="20250319 12:02:59.992" level="INFO" html="true">Created directory '&lt;a href="file://D:\Replay\Symphonyreplay\Output\8d96c8e3-4b27-41f3-921b-04ada782e930\pabot_results\0\Screenshot"&gt;D:\Replay\Symphonyreplay\Output\8d96c8e3-4b27-41f3-921b-04ada782e930\pabot_results\0\Screenshot&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20250319 12:02:59.990" endtime="20250319 12:02:59.992"/>
+</kw>
+<status status="PASS" starttime="20250319 12:02:59.990" endtime="20250319 12:02:59.992"/>
+</kw>
+<status status="PASS" starttime="20250319 12:02:59.988" endtime="20250319 12:02:59.992"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshot_taking}</arg>
+<arg>${True}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250319 12:02:59.993" level="INFO">${screenshot_taking} = True</msg>
+<status status="PASS" starttime="20250319 12:02:59.992" endtime="20250319 12:02:59.993"/>
+</kw>
+<kw name="Setup linux execution" library="Support">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${web_test_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${web_test}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${web_test}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20250319 12:02:59.993" endtime="20250319 12:02:59.994"/>
+</kw>
+<msg timestamp="20250319 12:02:59.994" level="INFO">${web_test_check} = True</msg>
+<status status="PASS" starttime="20250319 12:02:59.993" endtime="20250319 12:02:59.994"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${web_test_check}</arg>
+<arg>Setup Docker Execution Options</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Setup Docker Execution Options" library="Support_Web">
+<kw name="Setup Suite Metadata" library="Support_Web">
+<arg>${browser}</arg>
+<kw name="Get Browser Metadata" library="BrowserSupport">
+<var>&amp;{browser_information}</var>
+<arg>browser=${browser}</arg>
+<doc>Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}</doc>
+<msg timestamp="20250319 12:03:03.189" level="INFO">&amp;{browser_information} = { browser_version=133.0.6943.127 | driver_version=132.0.6834.110  }</msg>
+<status status="PASS" starttime="20250319 12:02:59.995" endtime="20250319 12:03:03.189"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_name</arg>
+<arg>${browser}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250319 12:03:03.189" level="INFO">Set suite metadata 'test_browser_name' to value 'chrome'.</msg>
+<status status="PASS" starttime="20250319 12:03:03.189" endtime="20250319 12:03:03.189"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_version</arg>
+<arg>${browser_information.browser_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250319 12:03:03.190" level="INFO">Set suite metadata 'test_browser_version' to value '133.0.6943.127'.</msg>
+<status status="PASS" starttime="20250319 12:03:03.190" endtime="20250319 12:03:03.191"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_driver_version</arg>
+<arg>${browser_information.driver_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250319 12:03:03.191" level="INFO">Set suite metadata 'test_driver_version' to value '132.0.6834.110 '.</msg>
+<status status="PASS" starttime="20250319 12:03:03.191" endtime="20250319 12:03:03.191"/>
+</kw>
+<status status="PASS" starttime="20250319 12:02:59.995" endtime="20250319 12:03:03.192"/>
+</kw>
+<kw name="Setup Global Docker Execution Options" library="Support_Web">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>None</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250319 12:03:03.193" level="INFO">${global_browser_options} = None</msg>
+<status status="PASS" starttime="20250319 12:03:03.192" endtime="20250319 12:03:03.193"/>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<var>${docker_check}</var>
+<arg>EXECUTION_ENVIRONMENT</arg>
+<arg>not_found</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<msg timestamp="20250319 12:03:03.193" level="INFO">${docker_check} = not_found</msg>
+<status status="PASS" starttime="20250319 12:03:03.193" endtime="20250319 12:03:03.193"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>"${docker_check}"!="docker"</arg>
+<arg>Log</arg>
+<arg>Not executing on Docker</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Not executing on Docker</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250319 12:03:03.194" level="INFO">Not executing on Docker</msg>
+<status status="PASS" starttime="20250319 12:03:03.194" endtime="20250319 12:03:03.194"/>
+</kw>
+<msg timestamp="20250319 12:03:03.194" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250319 12:03:03.194" endtime="20250319 12:03:03.194"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{options}</var>
+<arg>--headless</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20250319 12:03:03.194" endtime="20250319 12:03:03.194"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>@{docker_options}</arg>
+<arg>@{options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20250319 12:03:03.195" endtime="20250319 12:03:03.195"/>
+</kw>
+<status status="PASS" starttime="20250319 12:03:03.192" endtime="20250319 12:03:03.195"/>
+</kw>
+<kw name="Create Webdriver for chrome preferences" library="Support_Web">
+<kw name="Update Docker Execution Options" library="Support_Web">

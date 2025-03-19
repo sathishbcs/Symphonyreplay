@@ -1,0 +1,85 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Addon                                                              
+==============================================================================
+Check_Saint Transation Code                                             
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:9
+    T:  Check_Saint Transation Code    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:10
+      Saint Transation Code    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:63
+      Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[0]/mbar/menu[0]/menu[0]/menu[1]'
+------------------------------------------------------------------------------
+Selecting the path for the Addon                                        
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:13
+    T:  Selecting the path for the Addon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:14
+      Patch selection for the Addon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:87
+      Saint Select    wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0300/tabsQUEUE_COMP/tabpQUEUE_COMP_FC2/ssubQUEUE_COMP_SCA:SAPLSAINT_UI:0303/cmbGV_01_PATCH_REQ    ${symvar('Patch')}
+      |  ${symvar('Patch')} = SAPKITABC4 (str)
+______________________________________________________________________________
+| FAIL |
+com_error: (-2147417848, 'The object invoked has disconnected from its clients.', None, None)
+------------------------------------------------------------------------------
+Process Until Finish Button Visible                                     
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:19
+    T:  Process Until Finish Button Visible    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:20
+      Process Until Finish Button Visible    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:140
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:144
+      Run Transaction    /nex
+______________________________________________________________________________
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:146
+      Create Pdf    ${screenshot_directory}    ${output_pdf}
+      |  ${screenshot_directory} = D:\Replay\Symphonyreplay\Output\2dc9a1ec-1056-40bf-aa85-469f95ec8cb7\pabot_results\0 (str)
+      |  ${output_pdf} = D:\Replay\Symphonyreplay\Output\2dc9a1ec-1056-40bf-aa85-469f95ec8cb7\pabot_results\0\output.pdf (str)
+______________________________________________________________________________
+Tests.Test Addon                                                      | FAIL |
+Suite teardown failed:
+Several failures occurred:
+
+1) com_error: (-2147417848, 'The object invoked has disconnected from its clients.', None, None)
+
+2) No keyword with name 'Create Pdf' found.
+
+3 tests, 0 passed, 3 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\2dc9a1ec-1056-40bf-aa85-469f95ec8cb7\pabot_results\0\Output.xml
