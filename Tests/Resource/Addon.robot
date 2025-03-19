@@ -97,7 +97,7 @@ Patch selection for the Addon
     Sleep    2
     Take Screenshot    013_start options.jpg
 Important SAP note handling
-    ${content}    CustomSapGuiLibrary.Is Imp Notes Existing    wnd[1]    wnd[1]/tbar[0]/btn[0]
+    ${content}    CustomSapGuiLibrary.Is Imp Notes Existing Saint   wnd[1]    wnd[1]/tbar[0]/btn[0]
     Log    The window name is: ${content}
     # Click Element     wnd[1]/tbar[0]/btn[0] 
     Sleep    2
