@@ -8,14 +8,14 @@ Suite Setup    Spam_Patch_enhance.System Logon
 
 Check_Spam_update
     Spam Transaction
-#     Certificate Verification
-#     Loading package
-#     Display/Define
+    Certificate Verification
+    Loading package
+    Display/Define
     Spam software selection
-#     Important SAP note handling
+    Important SAP note handling
 
-Import Queue
-    # Importing queue from support package
-    # Start Options
-    # Import Option
-    Confirm Queue
+# Import Queue
+#     Importing queue from support package
+#     Start Options
+#     Import Option
+#     Confirm Queue
