@@ -1166,40 +1166,86 @@ class CustomSapGuiLibrary:
             return False
         
 
-    def get_finish_cell_text1(self, finish_str, button_id, status_line, refresh_id):
+    # def get_finish_cell_text1(self, finish_str, button_id, status_line, refresh_id):
+    #     try:
+    #         while True:
+    #             cell_text_1 = self.session.findById(status_line).Text
+    #             # cell_text_2 = cell_text_1
+    #             if finish_str == cell_text_1:
+    #                 self.session.findById(button_id).select()
+    #                 print("Installation Successful")
+    #                 break  # Exit the loop if the condition is met
+    #             else:
+    #                 self.session.findById(refresh_id).press()
+    #                 #print("No Match")
+    #                 time.sleep(30)
 
+    #         return cell_text_1
+ 
+    #     except Exception as e:
+    #         return f"Error: {str(e)}"
+    #         # return cell_text_2
+ 
+    def get_finish_cell_text1(self, finish_str, interrupt_str1, transport_id, button_id, status_line, refresh_id, startoption_spam_id, radio_button_id, startoptionok_id, Import_id, error_button_id):
         try:
-
             while True:
-
                 cell_text_1 = self.session.findById(status_line).Text
-
-                # cell_text_2 = cell_text_1
- 
+                print(cell_text_1)      
+                self.take_screenshot()
+                # cell_text_2 = cell_text_1[1:]  # Removing the first character
+                # print(cell_text_2)
+                self.take_screenshot()
                 if finish_str == cell_text_1:
-
+                    print(finish_str, cell_text_1)
                     self.session.findById(button_id).select()
-
                     print("Installation Successful")
-
                     break  # Exit the loop if the condition is met
-
+                elif interrupt_str1 == cell_text_1 :
+                    print(interrupt_str1, cell_text_1)
+                    self.take_screenshot()
+                    self.session.findById(transport_id).press()
+                    time.sleep(2)
+                    self.take_screenshot()
+                    print("Interruption caused")
+                    self.start_options_window_in_spam(startoption_spam_id)
+                    self.session.findById(radio_button_id).setFocus()
+                    self.session.findById(radio_button_id).selected = True
+                    self.take_screenshot()
+                    time.sleep(2)
+                    self.session.findById(startoptionok_id).press()
+                    self.take_screenshot()
+                    time.sleep(2)
+    
+                    self.session.findById(Import_id).press()
+                    time.sleep(2)
+                    print("Interruption resolved and process continued")
+                    self.handle_error_window_in_saint(error_button_id)
+                    
                 else:
-
                     self.session.findById(refresh_id).press()
-
                     #print("No Match")
-
                     time.sleep(30)
- 
+    
             return cell_text_1
- 
+    
         except Exception as e:
-
             return f"Error: {str(e)}"
-
             # return cell_text_2
  
+ 
+    def start_options_window_in_spam(self, startoption_spam_id):
+        window_id = "wnd[1]"
+        expected_title = "SPAM: Import: Queue"
+        try:
+            actual_title = self.session.findById(window_id).Text.strip()
+            print(f"Window title found: {actual_title}")
+            if expected_title in actual_title:
+                self.session.findById(startoption_spam_id).press()
+                print("Start Option button pressed.")
+            else:
+                print(f"Title mismatch. Expected: '{expected_title}', but got: '{actual_title}'")
+        except Exception as e:
+            print(f"An error occurred: {e}")
         
     def is_saint_Installation_status(self, window_id, continue_id):   
         try:

@@ -10,8 +10,15 @@ Library    PDF.py
 # ${search_patch}    SAPK-74010INSTPI
 ${continue_id}    wnd[1]/tbar[0]/btn[0]
 ${text_id}    wnd[1]/usr/txtMESSTXT1
-${status_line}    wnd[0]/usr/txtPAT100-PATCH_STEP
 ${no_Queue_id}    wnd[0]/usr/txtPAT100-STAT_LINE2
+${interrupt_str1}    Perform Adjustment
+${transport_id}    wnd[0]/tbar[1]/btn[19]
+${status_line}    wnd[0]/usr/txtPAT100-PATCH_STEP
+${startoption_spam_id}    wnd[1]/tbar[0]/btn[27]
+${radio_button_id}    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC4/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0704/radLAY0700-RB4_DIA
+${startoptionok_id}    wnd[1]/tbar[0]/btn[0]
+${Import_id}    wnd[1]/tbar[0]/btn[25]
+${error_button_id}    wnd[0]/tbar[1]/btn[20]
 ${finish_str}   Confirm queue
 # ${status_line}    wnd[0]/usr/sub:SAPLSAINT_UI:0100/txtWA_COMMENT_TEXT-LINE[0,0]
 ${refresh_id}   wnd[0]/tbar[1]/btn[30]
@@ -72,7 +79,7 @@ Display/Define
     Take Screenshot    006_Display.jpg
 
 Spam software selection
-    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[7]
+    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    2
     Take Screenshot    F01_patch_1.jpg
     CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${symvar('search_comp')}    ${symvar('search_patch')}
@@ -130,7 +137,7 @@ Import Option
     Take Screenshot    022_User_defined.jpg
  
 Confirm Queue
-    ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${button_id}    ${status_line}    ${refresh_id}
+    ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${interrupt_str1}    ${transport_id}    ${button_id}    ${status_line}    ${refresh_id}    ${startoption_spam_id}    ${radio_button_id}    ${startoptionok_id}    ${Import_id}    ${error_button_id}
     Log    ${cell_text_1}
     Sleep   2
     Take Screenshot    023_Confirmed_queue.jpg

@@ -1,0 +1,41 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch enhance                                                 
+==============================================================================
+Check_Spam_update                                                     | PASS |
+------------------------------------------------------------------------------
+Import Queue                                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:17
+    T:  Import Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:21
+      Confirm Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch_enhance.robot:140
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch_enhance.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch_enhance.robot:145
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test spam patch enhance                                         | FAIL |
+Suite teardown failed:
+com_error: (-2147417848, 'The object invoked has disconnected from its clients.', None, None)
+
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\c1ea39a6-0274-4717-bd35-517fad38b4f6\pabot_results\0\Output.xml
