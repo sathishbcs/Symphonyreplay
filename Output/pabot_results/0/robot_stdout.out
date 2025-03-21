@@ -1,14 +1,13 @@
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                        
 ==============================================================================
-Tests.Test spam patch enhance                                                 
+Tests.Test spam patch                                                         
 ==============================================================================
-**gbStart**logon_status**splitKeyValue**Multiple logon found. Please terminate all the logon & proceed**gbEnd**
 Check_Spam_update                                                     | PASS |
 ------------------------------------------------------------------------------
 Import Queue                                                          | PASS |
 ------------------------------------------------------------------------------
-Tests.Test spam patch enhance                                         | PASS |
+Tests.Test spam patch                                                 | PASS |
 2 tests, 2 passed, 0 failed
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                | PASS |

@@ -1010,33 +1010,42 @@ class CustomSapGuiLibrary:
         except Exception as e:
             print(f"Error: {str(e)}")
             return False
+
     
-        
     def spam_search_and_select_label(self, user_area_id, search_text, max_scrolls=50):
         try:
             user_area = self.session.findById(user_area_id)
             scroll_count = 0
             found = False
+            selected_text = None
 
             while scroll_count < max_scrolls and not found:
                 for child in user_area.Children:
-                    if child.Text == search_text:
+                    if child.Text.strip() == search_text.strip():
                         print(f"Text Found: {child.Text}")
+                        selected_text = child.Text
                         child.SetFocus()
-                        self.session.findById("wnd[1]").sendVKey(2)  # Simulate Enter key press
+                        if hasattr(child, "select"):
+                            child.select()
+                        elif hasattr(child, "press"):
+                            child.press()
+                        else:
+                            # fallback in case it's just focusable
+                            self.session.findById("wnd[1]").sendVKey(2)
                         found = True
                         break
 
                 if not found:
-                    # Scroll down and wait for the content to update
-                    print(scroll_count)
-                    self.session.findById("wnd[1]").sendVKey(82)  # 86 is the code for Page Down
-                    time.sleep(1)  # Adjust as necessary for GUI response time
+                    print(f"Scroll count: {scroll_count}, still searching...")
+                    self.session.findById("wnd[1]").sendVKey(82)  # Page Down
+                    time.sleep(1)
                     scroll_count += 1
 
             if not found:
                 print("Text not found after scrolling through all pages.")
-
+            
+            return selected_text
+        
         except Exception as e:
             print(f"Error: {e}")
 
@@ -1059,34 +1068,72 @@ class CustomSapGuiLibrary:
         except Exception as e:
             return f"Error: {e}"
     
+    # def spam_multiple_patch_version_select(self, comp_id, search_comp_1, search_patch_1):
+    #     try:
+    #         search_comp = ast.literal_eval(search_comp_1) if isinstance(search_comp_1, str) else search_comp_1
+    #         search_patch = ast.literal_eval(search_patch_1) if isinstance(search_patch_1, str) else search_patch_1
+
+    #         if not isinstance(search_comp, list) or not isinstance(search_patch, list):
+    #             raise ValueError("Inputs must be lists.")
+
+    #         if len(search_comp) != len(search_patch):
+    #             sys.exit("Component and patch lists must have the same length.")
+
+    #         comp_area = self.session.FindById(comp_id)
+    #         row_count = comp_area.RowCount
+
+    #         for i in range(len(search_comp)):
+    #             comp = search_comp[i]
+    #             patch = search_patch[i]
+
+    #             try:
+    #                 for x in range(row_count + 1):
+    #                     cell_value = comp_area.GetCellValue(x, "COMPONENT")
+    #                     if cell_value == comp:
+    #                         comp_area.modifyCell(x, "PATCH_REQ", patch)
+    #             except Exception as e:
+    #                 print(f"Error modifying cell: {e}")
+
+    #     except Exception as e:
+    #         print(f"Error: {e}")
+        
     def spam_multiple_patch_version_select(self, comp_id, search_comp_1, search_patch_1):
         try:
-            search_comp = ast.literal_eval(search_comp_1) if isinstance(search_comp_1, str) else search_comp_1
-            search_patch = ast.literal_eval(search_patch_1) if isinstance(search_patch_1, str) else search_patch_1
+            search_comp = ast.literal_eval(search_comp_1)
+            search_patch = ast.literal_eval(search_patch_1)
 
-            if not isinstance(search_comp, list) or not isinstance(search_patch, list):
-                raise ValueError("Inputs must be lists.")
+            if not len(search_comp) == len(search_patch):
+                print("Mismatch between components and patches")
+                sys.exit()
 
-            if len(search_comp) != len(search_patch):
-                sys.exit("Component and patch lists must have the same length.")
+            # Adding retry in case the control isn't ready
+            for attempt in range(3):
+                try:
+                    comp_area = self.session.FindById(comp_id)
+                    break
+                except Exception as e:
+                    print(f"Attempt {attempt + 1}: Component area not found. Retrying...")
+                    time.sleep(2)
+            else:
+                raise Exception("Component area could not be found after retries.")
 
-            comp_area = self.session.FindById(comp_id)
             row_count = comp_area.RowCount
 
             for i in range(len(search_comp)):
                 comp = search_comp[i]
                 patch = search_patch[i]
 
-                try:
-                    for x in range(row_count + 1):
-                        cell_value = comp_area.GetCellValue(x, "COMPONENT")
-                        if cell_value == comp:
-                            comp_area.modifyCell(x, "PATCH_REQ", patch)
-                except Exception as e:
-                    print(f"Error modifying cell: {e}")
-
+                for x in range(row_count):
+                    cell_value = comp_area.GetCellValue(x, "COMPONENT")
+                    if cell_value.strip() == comp:
+                        print(f"Updating row {x}: {comp} with patch {patch}")
+                        comp_area.modifyCell(x, "PATCH_REQ", patch)
+                        break
+                else:
+                    print(f"Component {comp} not found in table.")
         except Exception as e:
             print(f"Error: {e}")
+ 
   
 
     def find_addon_rows(self, comp_id, search_comp): 

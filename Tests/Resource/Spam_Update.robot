@@ -30,29 +30,31 @@ ${version_id}    wnd[0]/titl
 *** Keywords ***
 System Logon
     Start Process    ${symvar('EXE_PAD')}
-    Sleep   5s
+    Sleep   2
     Connect To Session
-    Sleep    5
+    Sleep    2
     Open Connection     ${symvar('Connection_Name')}
-    Sleep   5
+    Sleep   2
     Input Text    wnd[0]/usr/txtRSYST-MANDT    ${symvar('SAP_CLIENT')}
     Sleep    1
     Input Text    wnd[0]/usr/txtRSYST-BNAME    ${symvar('SAP_USER')}    
     Sleep    1
-    # ${SAP_PASSWORD}   OperatingSystem.Get Environment Variable    SAP_PASSWORD
-    # Input Password    wnd[0]/usr/pwdRSYST-BCODE    ${SAP_PASSWORD}  
-    Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{SAP_PASSWORD}   
-    Sleep   2
+    Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{SAP_PASSWORD} 
+    # Input Password    wnd[0]/usr/pwdRSYST-BCODE    ${symvar('SAP_PASSWORD')}  
+
     Send Vkey    0
-    Sleep    5
-    Take Screenshot    01_loginpage.jpg
-    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT2  wnd[1]/tbar[0]/btn[0] 
+    Sleep    2
+    
+    ${logon_status}    Multiple logon Handling     wnd[1]   wnd[1]/usr/radMULTI_LOGON_OPT2
+
+    IF    '${logon_status}' == "Multiple logon found. Please terminate all the logon & proceed"
+        Log To Console    **gbStart**logon_status**splitKeyValue**${logon_status}**gbEnd**
+    END
     Sleep   1
-    Take Screenshot    00_multi_logon_handling.jpg
 
 
 Spam Transaction
-    Run Transaction     spam  
+    Run Transaction     /nspam  
     Sleep    5
     Take Screenshot    02_spam.jpg
 

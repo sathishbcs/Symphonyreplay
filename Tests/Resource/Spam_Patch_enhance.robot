@@ -25,6 +25,7 @@ ${refresh_id}   wnd[0]/tbar[1]/btn[30]
 ${button_id}    wnd[0]/mbar/menu[0]/menu[5]
 ${comp_id}    wnd[1]/usr/tabsQUEUE_CALC/tabpQUEUE_CALC_FC1/ssubQUEUE_CALC_SCA:SAPLOCS_ALV_UI:0306/cntlCONTROL_ALL_COMP/shellcont/shell
 ${screenshot_directory}     ${OUTPUT_DIR}
+# ${comp_id}    wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell
 ${output_pdf}   ${OUTPUT_DIR}\\output.pdf
 
 *** Keywords *** 
@@ -79,7 +80,7 @@ Display/Define
     Take Screenshot    006_Display.jpg
 
 Spam software selection
-    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
+    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[7]
     Sleep    2
     Take Screenshot    F01_patch_1.jpg
     CustomSapGuiLibrary.Spam Multiple Patch Version Select    ${comp_id}    ${symvar('search_comp')}    ${symvar('search_patch')}
