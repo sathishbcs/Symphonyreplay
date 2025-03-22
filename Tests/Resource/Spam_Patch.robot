@@ -94,13 +94,19 @@ Spam Patch selection
     Sleep   2
     Take Screenshot    10_Spam_patch1.jpg
 
+Modification Adjustment
+    CustomSapGuiLibrary.is spam modification adjustment   wnd[1]  wnd[1]/usr/btnBUTTON_2
+    Take Screenshot    11_SAP_note.jpg
+  
+    # CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
+   
+    # CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
+    # Take Screenshot  12_Modification.jpg  
+
 Important SAP note handling
     CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/tbar[0]/btn[0]
     Take Screenshot    11_SAP_note.jpg
-
-    CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/usr/btnBUTTON_2
-    Take Screenshot    11_SAP_note.jpg
-    
+  
     CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
    
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
