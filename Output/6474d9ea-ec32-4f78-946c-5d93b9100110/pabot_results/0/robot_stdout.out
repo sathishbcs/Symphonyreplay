@@ -1,0 +1,42 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+Check_Spam_update                                                       
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:8
+    T:  Check_Spam_update    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:15
+      Important SAP note handling    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:100
+      Click Element    wnd[2]/tbar[0]/btn[0]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[2]/tbar[0]/btn[0]'
+------------------------------------------------------------------------------
+Import Queue                                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:17
+    T:  Import Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:18
+      Importing queue from support package    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:110
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+Tests.Test spam patch                                                 | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\6474d9ea-ec32-4f78-946c-5d93b9100110\pabot_results\0\Output.xml
