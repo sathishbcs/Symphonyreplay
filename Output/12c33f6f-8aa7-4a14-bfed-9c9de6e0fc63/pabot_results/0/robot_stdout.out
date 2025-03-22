@@ -1,0 +1,29 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+Check_Spam_update                                                     | PASS |
+------------------------------------------------------------------------------
+Import Queue                                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:18
+    T:  Import Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:19
+      Importing queue from support package    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:117
+      Click Element    wnd[1]/tbar[0]/btn[0]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[0]'
+------------------------------------------------------------------------------
+Tests.Test spam patch                                                 | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\12c33f6f-8aa7-4a14-bfed-9c9de6e0fc63\pabot_results\0\Output.xml
