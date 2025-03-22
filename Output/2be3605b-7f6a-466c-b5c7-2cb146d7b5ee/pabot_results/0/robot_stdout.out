@@ -1,0 +1,43 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+Check_Spam_update                                                       
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:8
+    T:  Check_Spam_update    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:13
+      Spam Component selection    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:82
+      Select Table Row    wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell    ${row}
+      |  ${row} = Error: (-2147352567, 'Exception occurred.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\sapfront.HLP', 393215, 0), None) (str)
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell'
+------------------------------------------------------------------------------
+Import Queue                                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:17
+    T:  Import Queue    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:18
+      Importing queue from support package    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:114
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+Tests.Test spam patch                                                 | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\2be3605b-7f6a-466c-b5c7-2cb146d7b5ee\pabot_results\0\Output.xml

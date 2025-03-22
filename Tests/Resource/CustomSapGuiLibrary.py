@@ -811,13 +811,28 @@ class CustomSapGuiLibrary:
     #New scripts
         
     def is_imp_notes_existing(self, modal_window_id, modal_continue_id):  
-        # expected_text = "SPAM: Important SAP Notes"
-        expected_text = ["SPAM: Important SAP Notes", "Add Modification Adjustment Transports to the Queue"]
+        expected_text = "SPAM: Important SAP Notes"
         try:
             actual_text = self.session.findById(modal_window_id).Text.strip()
             print(f"Modal window text found: {actual_text}")
-            # if expected_text in actual_text:
-            if any(text in actual_text for text in expected_text):
+            if expected_text in actual_text:
+                print("Modal window exists.")
+                self.session.findById(modal_continue_id).press()
+                print("Continue button pressed.")
+                return actual_text
+            else:
+                print(f"Text mismatch. Expected: '{expected_text}', but got: '{actual_text}'")
+                return None
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
+        
+    def is_spam_modification_adjustment(self, modal_window_id, modal_continue_id):  
+        expected_text = "Add Modification Adjustment Transports to the Queue"
+        try:
+            actual_text = self.session.findById(modal_window_id).Text.strip()
+            print(f"Modal window text found: {actual_text}")
+            if expected_text in actual_text:
                 print("Modal window exists.")
                 self.session.findById(modal_continue_id).press()
                 print("Continue button pressed.")

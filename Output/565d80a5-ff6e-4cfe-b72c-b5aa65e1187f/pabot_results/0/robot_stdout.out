@@ -1,0 +1,45 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:4
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:39
+      Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{SAP_PASSWORD}
+      |  %{SAP_PASSWORD} = r7Jz1tRqd85J (str)
+______________________________________________________________________________
+Check_Spam_update                                                     | FAIL |
+Parent suite setup failed:
+ValueError: Cannot find element with id 'wnd[0]/usr/pwdRSYST-BCODE'
+------------------------------------------------------------------------------
+Import Queue                                                          | FAIL |
+Parent suite setup failed:
+ValueError: Cannot find element with id 'wnd[0]/usr/pwdRSYST-BCODE'
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:152
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test spam patch                                                 | FAIL |
+Suite setup failed:
+ValueError: Cannot find element with id 'wnd[0]/usr/pwdRSYST-BCODE'
+
+Also suite teardown failed:
+com_error: (-2147417848, 'The object invoked has disconnected from its clients.', None, None)
+
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\565d80a5-ff6e-4cfe-b72c-b5aa65e1187f\pabot_results\0\Output.xml
