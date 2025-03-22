@@ -102,6 +102,7 @@ Important SAP note handling
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
     Sleep   2
     Take Screenshot    013_Modification.jpg  
+    
 Importing queue from support package
     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[3]
     Sleep   2
