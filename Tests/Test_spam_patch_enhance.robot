@@ -2,7 +2,7 @@
 Resource    ../Tests/Resource/Spam_Patch_enhance.robot
 Test Tags   spampatchenhance
 Suite Setup    Spam_Patch_enhance.System Logon
-# Suite Teardown    Spam_Patch_enhance.System Logout
+Suite Teardown    Spam_Patch_enhance.System Logout
   
 *** Test Cases ***
 
