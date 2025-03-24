@@ -12,10 +12,10 @@ Check_Spam_update
     Loading package
     Display/Define
     Spam software selection
-    # Important SAP note handling
+    Important SAP note handling
 
-# Import Queue
-#     Importing queue from support package
-#     Start Options
-#     Import Option
-#     Confirm Queue
+Import Queue
+    Importing queue from support package
+    Start Options
+    Import Option
+    Confirm Queue
