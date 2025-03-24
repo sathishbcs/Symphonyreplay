@@ -96,11 +96,11 @@ Spam Patch selection
 
 
 Important SAP note handling
+    
+    CustomSapGuiLibrary.Is Imp Notes Existing   wnd[2]  wnd[2]/tbar[0]/btn[0]
+    # CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
     CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/tbar[0]/btn[0]
     Take Screenshot    11_SAP_note.jpg
-  
-    # CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
-   
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
     Take Screenshot  12_Modification.jpg  
    

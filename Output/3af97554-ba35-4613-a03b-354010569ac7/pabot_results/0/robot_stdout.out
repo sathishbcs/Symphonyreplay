@@ -1,0 +1,15 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch enhance                                                 
+==============================================================================
+**gbStart**logon_status**splitKeyValue**Multiple logon found. Please terminate all the logon & proceed**gbEnd**
+Check_Spam_update                                                     | PASS |
+------------------------------------------------------------------------------
+Tests.Test spam patch enhance                                         | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\3af97554-ba35-4613-a03b-354010569ac7\pabot_results\0\Output.xml

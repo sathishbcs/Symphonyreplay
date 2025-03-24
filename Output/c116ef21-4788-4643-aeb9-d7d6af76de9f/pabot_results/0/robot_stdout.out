@@ -1,0 +1,18 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Addon                                                              
+==============================================================================
+Check_Saint Transation Code                                           | PASS |
+------------------------------------------------------------------------------
+Selecting the path for the Addon                                      | PASS |
+------------------------------------------------------------------------------
+Process Until Finish Button Visible                                   | PASS |
+------------------------------------------------------------------------------
+Tests.Test Addon                                                      | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\c116ef21-4788-4643-aeb9-d7d6af76de9f\pabot_results\0\Output.xml
