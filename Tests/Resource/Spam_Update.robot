@@ -56,60 +56,59 @@ System Logon
 Spam Transaction
     Run Transaction     /nspam  
     Sleep    5
-    Take Screenshot    02_spam.jpg
+    Take Screenshot    01_spam.jpg
 
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
     Sleep    2
-    Take Screenshot    03_certficate1.jpg
+    Take Screenshot    02_certficate1.jpg
     CustomSapGuiLibrary.get maintenance certificate text    ${certificate_id}    
-    Take Screenshot    04_certificate2.jpg
+    Take Screenshot    03_certificate2.jpg
     
 
 Loading package
     #Clicking Application server to load packages
     Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
     Sleep    2
-    Take Screenshot    05_loading_1.jpg
+    Take Screenshot    04_loading_1.jpg
     #Asks for confirmation to upload
     Click Element    wnd[1]/usr/btnSPOP-OPTION1
     Sleep    2
-    Take Screenshot    06_loading_2.jpg
+    Take Screenshot    05_loading_2.jpg
     #Step back to Support package manager screen
     Click Element    wnd[0]/tbar[0]/btn[3]
     Sleep    2
-    Take Screenshot    07_loading_3.jpg
+    Take Screenshot    06_loading_3.jpg
 
 Import Spam/Saint update
     Click Element    wnd[0]/mbar/menu[0]/menu[2]
-    Take Screenshot    08_SPM1.jpg
+    Take Screenshot    07_SPM1.jpg
     Click Element    wnd[1]/tbar[0]/btn[25]
-    Take Screenshot    09_SPM2.jpg
+    Take Screenshot    08_SPM2.jpg
     ${content}    CustomSapGuiLibrary.Run Time Error Existing    ${runtimeerror_id}    ${back_id}    
     Log    The window name is: ${content}
-    Take Screenshot    10_runtimeerror.jpg
+    Take Screenshot    09_runtimeerror.jpg
 
     Run Transaction     spam  
     Sleep    5
-    Take Screenshot    11_spam.jpg  
+    Take Screenshot    10_spam.jpg  
 
     # #EPILOGUE HANDLING
     CustomSapGuiLibrary.Epilogue Handling   ${epi_id}   ${spam_id}  ${window_1_id}  ${import_id}
-    Take Screenshot    12_SPM3.jpg  
+    Take Screenshot    11_SPM3.jpg  
     # #Restart SPAM and read the current information button for Epilogue
     Click Element    wnd[1]/tbar[0]/btn[0]
-    Take Screenshot    13_SPM4.jpg
+    Take Screenshot    12_SPM4.jpg
       
     Run Transaction     spam  
     Sleep    5
-    Take Screenshot    14_spam5.jpg
+    Take Screenshot    13_spam5.jpg
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
     Sleep   5
     
     CustomSapGuiLibrary.Version Print   ${version_id}
-    Take Screenshot    15_spam6.jpg
+    Take Screenshot    14_spam6.jpg
 
 System Logout
     Run Transaction   /nex
     Sleep    5
-    Take Screenshot    logoutpage.jpg

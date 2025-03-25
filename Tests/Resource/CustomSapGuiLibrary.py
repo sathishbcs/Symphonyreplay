@@ -1213,35 +1213,15 @@ class CustomSapGuiLibrary:
             return False
         
 
-    # def get_finish_cell_text1(self, finish_str, button_id, status_line, refresh_id):
-    #     try:
-    #         while True:
-    #             cell_text_1 = self.session.findById(status_line).Text
-    #             # cell_text_2 = cell_text_1
-    #             if finish_str == cell_text_1:
-    #                 self.session.findById(button_id).select()
-    #                 print("Installation Successful")
-    #                 break  # Exit the loop if the condition is met
-    #             else:
-    #                 self.session.findById(refresh_id).press()
-    #                 #print("No Match")
-    #                 time.sleep(30)
-
-    #         return cell_text_1
- 
-    #     except Exception as e:
-    #         return f"Error: {str(e)}"
-    #         # return cell_text_2
- 
     def get_finish_cell_text1(self, finish_str, interrupt_str1, transport_id, button_id, status_line, refresh_id, startoption_spam_id, radio_button_id, startoptionok_id, Import_id, error_button_id):
         try:
             while True:
                 cell_text_1 = self.session.findById(status_line).Text
                 print(cell_text_1)      
-                self.take_screenshot()
+                # self.take_screenshot()
                 # cell_text_2 = cell_text_1[1:]  # Removing the first character
                 # print(cell_text_2)
-                self.take_screenshot()
+                # self.take_screenshot()
                 if finish_str == cell_text_1:
                     print(finish_str, cell_text_1)
                     self.session.findById(button_id).select()
@@ -1249,18 +1229,18 @@ class CustomSapGuiLibrary:
                     break  # Exit the loop if the condition is met
                 elif interrupt_str1 == cell_text_1 :
                     print(interrupt_str1, cell_text_1)
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     self.session.findById(transport_id).press()
                     time.sleep(2)
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     print("Interruption caused")
                     self.start_options_window_in_spam(startoption_spam_id)
                     self.session.findById(radio_button_id).setFocus()
                     self.session.findById(radio_button_id).selected = True
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     time.sleep(2)
                     self.session.findById(startoptionok_id).press()
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     time.sleep(2)
     
                     self.session.findById(Import_id).press()
@@ -1362,10 +1342,10 @@ class CustomSapGuiLibrary:
             while True:
                 cell_text_1 = self.session.findById(status_line).Text
                 print(cell_text_1)
-                self.take_screenshot()
+                # self.take_screenshot()
                 cell_text_2 = cell_text_1[1:]  # Removing the first character
                 print(cell_text_2)
-                self.take_screenshot()
+                # self.take_screenshot()
                 if finish_str == cell_text_2:
                     print(finish_str, cell_text_2)
                     self.session.findById(button_id).press()
@@ -1375,18 +1355,18 @@ class CustomSapGuiLibrary:
                 elif interrupt_str1 == cell_text_2 or interrupt_str2 == cell_text_2:
                     print(interrupt_str1, cell_text_2)
                     print(interrupt_str2, cell_text_2)
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     self.session.findById(continue_id).press()
                     time.sleep(2)
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     print("Interruption caused")
                     self.start_options_window_in_saint(startoption_id)
                     self.session.findById(radio_button_id).setFocus()
                     self.session.findById(radio_button_id).selected = True
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     time.sleep(2)
                     self.session.findById(startoptionok_id).press()
-                    self.take_screenshot()
+                    # self.take_screenshot()
                     time.sleep(2)
 
                     self.session.findById(import_id).press()
