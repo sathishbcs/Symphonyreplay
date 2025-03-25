@@ -1420,9 +1420,9 @@ class CustomSapGuiLibrary:
             # Get session ID dynamically
             result = subprocess.run('query session', capture_output=True, text=True, shell=True)
 
-            if result.returncode != 0:
-                print(f"Error executing 'query session': {result.stderr}")
-                return
+            # if result.returncode != 0:
+            #     print(f"Error executing 'query session': {result.stderr}")
+            #     return
 
             for line in result.stdout.splitlines():
                 if ">" in line:  # Find the line that contains ">"
