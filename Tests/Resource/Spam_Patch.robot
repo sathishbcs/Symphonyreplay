@@ -26,6 +26,8 @@ ${output_pdf}   ${OUTPUT_DIR}\\output.pdf
 
 *** Keywords *** 
 System Logon
+    CustomSapGuiLibrary.Ensure Console Session
+    Sleep   15
     Start Process    ${symvar('EXE_PAD')}
     Sleep   2
     Connect To Session
@@ -53,7 +55,6 @@ Spam Transaction
     Run Transaction     spam  
     Sleep    5
     Take Screenshot    01_spam.jpg
-    CustomSapGuiLibrary.Screenshot Test    01_headsup.jpg
 
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]

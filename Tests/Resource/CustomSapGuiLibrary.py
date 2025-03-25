@@ -8,6 +8,7 @@ from robot.api import logger
 import sys
 import ast
 import mss
+import subprocess
 
 class CustomSapGuiLibrary:
     """The SapGuiLibrary is a library that enables users to create tests for the Sap Gui application
@@ -1412,7 +1413,17 @@ class CustomSapGuiLibrary:
         
         except Exception as e:
             print(f"An error occurred: {e}")
-
-    def screenshot_test(self, screenshot_name):
-        with mss.mss() as sct:
-            sct.shot(output=screenshot_name)
+    
+    def ensure_console_session(self):
+        """Switches the active RDP session to console."""
+        try:
+            # Get session ID dynamically
+            result = subprocess.run("query session", capture_output=True, text=True, shell=True)
+            for line in result.stdout.splitlines():
+                if "Active" in line and "rdp-tcp" in line:
+                    session_id = line.split()[2]  # Extract session ID
+                    subprocess.run(f"tscon {session_id} /dest:console", shell=True)
+                    print(f"Switched session {session_id} to console")
+                    break
+        except Exception as e:
+            print(f"Failed to switch session: {e}")
