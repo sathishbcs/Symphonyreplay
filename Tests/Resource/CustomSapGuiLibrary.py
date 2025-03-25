@@ -1417,7 +1417,6 @@ class CustomSapGuiLibrary:
     def ensure_console_session(self):
         """Switches the active RDP session to console."""
         try:
-            # Get session ID dynamically
             result = subprocess.run('query session', capture_output=True, text=True, shell=True)
 
             # if result.returncode != 0:
@@ -1425,17 +1424,17 @@ class CustomSapGuiLibrary:
             #     return
 
             for line in result.stdout.splitlines():
-                if ">" in line:  # Find the line that contains ">"
+                if ">" in line:  
                     parts = line.split()
                     if len(parts) < 3:
-                        continue  # Skip malformed lines
+                        continue
                     
-                    session_id = parts[2]  # Extract session ID
+                    session_id = parts[2]
                     
                     # Switch session to console
                     subprocess.run(f"tscon {session_id} /dest:console", shell=True)
                     print(f"Switched session {session_id} to console")
-                    break  # Stop after switching the first found session
+                    break
 
         except Exception as e:
             print(f"Failed to switch session: {e}")
