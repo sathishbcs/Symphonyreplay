@@ -1418,18 +1418,24 @@ class CustomSapGuiLibrary:
         """Switches the active RDP session to console."""
         try:
             # Get session ID dynamically
-            result = subprocess.run("query session | findstr ">"", capture_output=True, text=True, shell=True)
+            result = subprocess.run('query session', capture_output=True, text=True, shell=True)
+
+            if result.returncode != 0:
+                print("Error executing 'query session'")
+                return
+
             for line in result.stdout.splitlines():
-                if "Active" in line:
-                    session_id = line.split()[2]  # Extract session ID
+                if ">" in line:  # Find the line that contains ">"
+                    parts = line.split()
+                    if len(parts) < 3:
+                        continue  # Skip malformed lines
+                    
+                    session_id = parts[2]  # Extract session ID
+                    
+                    # Switch session to console
                     subprocess.run(f"tscon {session_id} /dest:console", shell=True)
                     print(f"Switched session {session_id} to console")
-                    break
-                elif "Disc" in line:
-                    session_id = line.split()[2]
-                    subprocess.run(f"tscon {session_id} /dest:console", shell=True)
-                    print(f"Activated session {session_id}")
-                    break
+                    break  # Stop after switching the first found session
 
         except Exception as e:
             print(f"Failed to switch session: {e}")
