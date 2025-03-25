@@ -14,16 +14,6 @@ Check_Spam_update
     Spam Patch selection
     Important SAP note handling
 
-# Import Queue
-#     Importing queue from support package
-#     Confirm Queue
-
-
-
-
-    
-
-
-
-
-
+Import Queue
+    Importing queue from support package
+    Confirm Queue
