@@ -145,10 +145,10 @@ Confirm Queue
     Take Screenshot    21_Confirmed_queue.jpg
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
     Sleep   2
-    Take Screenshot    22_Status_Confirmed_queue1.jpg
+    # Take Screenshot    22_Status_Confirmed_queue1.jpg
     CustomSapGuiLibrary.Click Element   wnd[1]/tbar[0]/btn[27]
     Sleep   2
-    Take Screenshot    23_Status_Confirmed_queue2.jpg
+    # Take Screenshot    23_Status_Confirmed_queue2.jpg
  
 System Logout
     Run Transaction   /nex

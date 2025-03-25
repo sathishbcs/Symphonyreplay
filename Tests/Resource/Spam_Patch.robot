@@ -142,10 +142,10 @@ Confirm Queue
     Take Screenshot    20_Confirmed_queue.jpg
     #Status check: No queue has been defined
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
-    Take Screenshot    21_Status_Confirmed_queue1.jpg
+    # Take Screenshot    21_Status_Confirmed_queue1.jpg
     #Click DoNOTSEND
     CustomSapGuiLibrary.Click Element   wnd[1]/tbar[0]/btn[27]
-    Take Screenshot    22_Status_Confirmed_queue2.jpg
+    # Take Screenshot    22_Status_Confirmed_queue2.jpg
 
 System Logout
     Run Transaction   /nex
