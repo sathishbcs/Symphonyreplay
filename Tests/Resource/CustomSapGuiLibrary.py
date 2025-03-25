@@ -1421,7 +1421,7 @@ class CustomSapGuiLibrary:
             result = subprocess.run('query session', capture_output=True, text=True, shell=True)
 
             if result.returncode != 0:
-                print("Error executing 'query session'")
+                print(f"Error executing 'query session': {result.stderr}")
                 return
 
             for line in result.stdout.splitlines():
