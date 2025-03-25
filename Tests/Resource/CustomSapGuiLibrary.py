@@ -7,7 +7,7 @@ import os
 from robot.api import logger
 import sys
 import ast
-import pyautogui
+import mss
 
 class CustomSapGuiLibrary:
     """The SapGuiLibrary is a library that enables users to create tests for the Sap Gui application
@@ -1414,9 +1414,5 @@ class CustomSapGuiLibrary:
             print(f"An error occurred: {e}")
 
     def screenshot_test(self, screenshot_name):
-        """Takes a screenshot, only if 'screenshots on error' has been enabled,
-        either at import of with keyword `enable screenshots on error`.
-
-        This keyword uses Robots' internal `Screenshot` library.
-        """
-        pyautogui.screenshot(screenshot_name)
+        with mss.mss() as sct:
+            sct.shot(output=screenshot_name)
