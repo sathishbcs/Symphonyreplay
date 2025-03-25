@@ -53,7 +53,7 @@ Spam Transaction
     Run Transaction     spam  
     Sleep    5
     Take Screenshot    01_spam.jpg
-    CustomSapGuiLibrary.Screenshot Test    01_spam.png
+    CustomSapGuiLibrary.Screenshot Test    01_headsup.jpg
 
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
