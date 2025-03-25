@@ -8,15 +8,15 @@ Suite Teardown    Spam_Patch.System Logout
 Check_Spam_update
     Spam Transaction
     Certificate Verification
-    Loading package
-    Display/Define
-    Spam Component selection
-    Spam Patch selection
-    Important SAP note handling
+#     Loading package
+#     Display/Define
+#     Spam Component selection
+#     Spam Patch selection
+#     Important SAP note handling
 
-Import Queue
-    Importing queue from support package
-    Confirm Queue
+# Import Queue
+#     Importing queue from support package
+#     Confirm Queue
 
 
 
