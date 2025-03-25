@@ -1,0 +1,49 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Addon                                                              
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:4
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:36
+      Open Connection    ${symvar('Connection_Name')}
+      |  ${symvar('Connection_Name')} = PRD (str)
+______________________________________________________________________________
+Check_Saint Transation Code                                           | FAIL |
+Parent suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+------------------------------------------------------------------------------
+Selecting the path for the Addon                                      | FAIL |
+Parent suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+------------------------------------------------------------------------------
+Process Until Finish Button Visible                                   | FAIL |
+Parent suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:144
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test Addon                                                      | FAIL |
+Suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+
+Also suite teardown failed:
+AttributeError: 'int' object has no attribute 'findById'
+
+3 tests, 0 passed, 3 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\639cdb73-e330-4fbb-8a22-cbe7ee3472f4\pabot_results\0\Output.xml
