@@ -1,0 +1,14 @@
+Could not connect sessionID 4 to sessionname console, Error code 5023
+Error [5023]:The group or resource is not in the correct state to perform the requested operation.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
+[ WARN ] Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.
