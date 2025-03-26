@@ -1432,7 +1432,7 @@ class CustomSapGuiLibrary:
                     session_id = parts[2]
                     
                     # Switch session to console
-                    subprocess.run(f"tscon {session_id} /dest:console", shell=True)
+                    subprocess.run(f"tscon 4 /dest:console", shell=True)
                     print(f"Switched session {session_id} to console")
                     break
 
