@@ -9,7 +9,7 @@ Check_Spam_update
     Spam Transaction
     Certificate Verification
     Loading package
-    Display/Define
+    # Display/Define
 #     Spam Component selection
 #     Spam Patch selection
 #     Important SAP note handling

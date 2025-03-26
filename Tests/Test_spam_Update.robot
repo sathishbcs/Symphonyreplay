@@ -9,8 +9,8 @@ Suite Teardown    Spam_Update.System Logout
 Check_Spam_update
     Spam Transaction
     Certificate Verification
-    Loading package
-    Import Spam/Saint update
+    # Loading package
+    # Import Spam/Saint update
     
     
 
