@@ -30,6 +30,7 @@ ${version_id}    wnd[0]/titl
 *** Keywords ***
 System Logon
     CustomSapGuiLibrary.Ensure Console Session
+    Sleep   5
     Start Process    ${symvar('EXE_PAD')}
     Sleep   2
     Connect To Session
