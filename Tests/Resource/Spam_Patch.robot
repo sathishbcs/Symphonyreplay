@@ -26,7 +26,7 @@ ${output_pdf}   ${OUTPUT_DIR}\\output.pdf
 
 *** Keywords *** 
 System Logon
-    CustomSapGuiLibrary.Ensure Console Session
+    # CustomSapGuiLibrary.Ensure Console Session
     Sleep   5
     Start Process    ${symvar('EXE_PAD')}
     Sleep   2

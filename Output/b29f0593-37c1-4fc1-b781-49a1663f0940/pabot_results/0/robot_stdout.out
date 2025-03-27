@@ -1,0 +1,120 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\__init__.robot:3
+      Setup highest level suite    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\__init__.robot:12
+      Setup linux execution    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Support.robot:63
+      Run Keyword If    ${web_test_check}    Setup Docker Execution Options
+      |  ${web_test_check} = <Unable to define variable value>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  None:0
+      Setup Docker Execution Options    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Web\Support_Web.robot:32
+      Setup Suite Metadata    ${browser}
+      |  ${browser} = chrome (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Web\Support_Web.robot:26
+      Get Browser Metadata    browser=${browser}
+      |  browser=${browser} = browser=chrome (str)
+______________________________________________________________________________
+Tests.Test spam Update                                                        
+==============================================================================
+Check_Spam_update                                                     | FAIL |
+Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 132
+Current browser version is 134.0.6998.167 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF6EF99CC05+28741]
+	(No symbol) [0x00007FF6EF8FFED0]
+	(No symbol) [0x00007FF6EF794FBA]
+	(No symbol) [0x00007FF6EF7D6C52]
+	(No symbol) [0x00007FF6EF7D5CBB]
+	(No symbol) [0x00007FF6EF7CFCE8]
+	(No symbol) [0x00007FF6EF7CB379]
+	(No symbol) [0x00007FF6EF81B09A]
+	(No symbol) [0x00007FF6EF81A6D0]
+	(No symbol) [0x00007FF6EF80FBD3]
+	(No symbol) [0x00007FF6EF7D9F43]
+	(No symbol) [0x00007FF6EF7DB2D1]
+	GetHandleVerifier [0x00007FF6EFCCDE3D+3375741]
+	GetHandleVerifier [0x00007FF6EFCE096A+3452330]
+	GetHandleVerifier [0x00007FF6EFCD671D+3410781]
+	GetHandleVerifier [0x00007FF6EFA6653B+854395]
+	(No symbol) [0x00007FF6EF90BE0F]
+	(No symbol) [0x00007FF6EF907714]
+	(No symbol) [0x00007FF6EF9078AD]
+	(No symbol) [0x00007FF6EF8F6189]
+	BaseThreadInitThunk [0x00007FF972454ED0+16]
+	RtlUserThreadStart [0x00007FF9739CE20B+43]
+------------------------------------------------------------------------------
+Tests.Test spam Update                                                | FAIL |
+Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 132
+Current browser version is 134.0.6998.167 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF6EF99CC05+28741]
+	(No symbol) [0x00007FF6EF8FFED0]
+	(No symbol) [0x00007FF6EF794FBA]
+	(No symbol) [0x00007FF6EF7D6C52]
+	(No symbol) [0x00007FF6EF7D5CBB]
+	(No symbol) [0x00007FF6EF7CFCE8]
+	(No symbol) [0x00007FF6EF7CB379]
+	(No symbol) [0x00007FF6EF81B09A]
+	(No symbol) [0x00007FF6EF81A6D0]
+	(No symbol) [0x00007FF6EF80FBD3]
+	(No symbol) [0x00007FF6EF7D9F43]
+	(No symbol) [0x00007FF6EF7DB2D1]
+	GetHandleVerifier [0x00007FF6EFCCDE3D+3375741]
+	GetHandleVerifier [0x00007FF6EFCE096A+3452330]
+	GetHandleVerifier [0x00007FF6EFCD671D+3410781]
+	GetHandleVerifier [0x00007FF6EFA6653B+854395]
+	(No symbol) [0x00007FF6EF90BE0F]
+	(No symbol) [0x00007FF6EF907714]
+	(No symbol) [0x00007FF6EF9078AD]
+	(No symbol) [0x00007FF6EF8F6189]
+	BaseThreadInitThunk [0x00007FF972454ED0+16]
+	RtlUserThreadStart [0x00007FF9739CE20B+43]
+
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+Suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 132
+Current browser version is 134.0.6998.167 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF6EF99CC05+28741]
+	(No symbol) [0x00007FF6EF8FFED0]
+	(No symbol) [0x00007FF6EF794FBA]
+	(No symbol) [0x00007FF6EF7D6C52]
+	(No symbol) [0x00007FF6EF7D5CBB]
+	(No symbol) [0x00007FF6EF7CFCE8]
+	(No symbol) [0x00007FF6EF7CB379]
+	(No symbol) [0x00007FF6EF81B09A]
+	(No symbol) [0x00007FF6EF81A6D0]
+	(No symbol) [0x00007FF6EF80FBD3]
+	(No symbol) [0x00007FF6EF7D9F43]
+	(No symbol) [0x00007FF6EF7DB2D1]
+	GetHandleVerifier [0x00007FF6EFCCDE3D+3375741]
+	GetHandleVerifier [0x00007FF6EFCE096A+3452330]
+	GetHandleVerifier [0x00007FF6EFCD671D+3410781]
+	GetHandleVerifier [0x00007FF6EFA6653B+854395]
+	(No symbol) [0x00007FF6EF90BE0F]
+	(No symbol) [0x00007FF6EF907714]
+	(No symbol) [0x00007FF6EF9078AD]
+	(No symbol) [0x00007FF6EF8F6189]
+	BaseThreadInitThunk [0x00007FF972454ED0+16]
+	RtlUserThreadStart [0x00007FF9739CE20B+43]
+
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\b29f0593-37c1-4fc1-b781-49a1663f0940\pabot_results\0\Output.xml

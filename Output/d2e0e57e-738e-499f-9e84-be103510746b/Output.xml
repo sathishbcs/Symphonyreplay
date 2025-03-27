@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot generated="20250326 11:56:59.044" generator="Rebot 6.0.2 (Python 3.13.1 on win32)" rpa="false" schemaversion="3">
+ <suite id="s1">
+  <status elapsedtime="0" endtime="N/A" starttime="N/A" status="SKIP"/>
+ </suite>
+ <statistics>
+  <total>
+   <stat fail="0" pass="0" skip="0">
+    All Tests
+   </stat>
+  </total>
+  <tag>
+  </tag>
+  <suite>
+   <stat fail="0" id="s1" pass="0" skip="0"/>
+  </suite>
+ </statistics>
+ <errors>
+ </errors>
+</robot>
