@@ -1415,26 +1415,30 @@ class CustomSapGuiLibrary:
             print(f"An error occurred: {e}")
     
     def ensure_console_session(self):
-        """Switches the active RDP session to console."""
+        """Switches the active RDP session to console. Fails if already in console."""
         try:
             result = subprocess.run('query session', capture_output=True, text=True, shell=True)
 
-            # if result.returncode != 0:
-            #     print(f"Error executing 'query session': {result.stderr}")
-            #     return
-
             for line in result.stdout.splitlines():
-                if ">" in line:  
+                if ">" in line:
                     parts = line.split()
                     if len(parts) < 3:
                         continue
-                    
+
+                    session_name = parts[1].lower()
                     session_id = parts[2]
-                    
+
+                    # Fail if already on console
+                    if session_name == "console":
+                        raise Exception("Session is already in console. Failing as requested.")
+
                     # Switch session to console
                     subprocess.run(f"tscon {session_id} /dest:console", shell=True)
                     print(f"Switched session {session_id} to console")
                     break
+            else:
+                raise Exception("No active session found.")
 
         except Exception as e:
             print(f"Failed to switch session: {e}")
+            raise
