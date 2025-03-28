@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.13.1 on win32)" generated="20250328 10:44:10.165" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\Replay\Symphonyreplay\Tests">
+<kw name="Setup highest level suite" type="SETUP">
+<kw name="Set Variable" library="BuiltIn">
+<var>${d.test_server}</var>
+<arg>${test_server}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250328 10:44:10.917" level="INFO">${d.test_server} = Dev</msg>
+<status status="PASS" starttime="20250328 10:44:10.917" endtime="20250328 10:44:10.917"/>
+</kw>
+<kw name="Reset screenshot count variable" library="Support">
+<kw name="Set Variable" library="BuiltIn">
+<var>${screenshotCount}</var>
+<arg>${PABOTQUEUEINDEX}_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250328 10:44:10.918" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250328 10:44:10.918" endtime="20250328 10:44:10.918"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshotCount}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250328 10:44:10.918" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250328 10:44:10.918" endtime="20250328 10:44:10.919"/>
+</kw>
+<kw name="Set up screenshot directory" library="Support">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${OUTPUTDIR}${/}${wvar('screenshot_dir')}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20250328 10:44:10.920" level="INFO">Web.Dev.screenshot_dir: Screenshot</msg>
+<msg timestamp="20250328 10:44:10.920" level="INFO" html="true">Created directory '&lt;a href="file://D:\Replay\Symphonyreplay\Output\149d4b49-5c67-4c46-b05b-362795f78d33\pabot_results\0\Screenshot"&gt;D:\Replay\Symphonyreplay\Output\149d4b49-5c67-4c46-b05b-362795f78d33\pabot_results\0\Screenshot&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20250328 10:44:10.919" endtime="20250328 10:44:10.920"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.919" endtime="20250328 10:44:10.920"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.917" endtime="20250328 10:44:10.920"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshot_taking}</arg>
+<arg>${True}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250328 10:44:10.921" level="INFO">${screenshot_taking} = True</msg>
+<status status="PASS" starttime="20250328 10:44:10.920" endtime="20250328 10:44:10.921"/>
+</kw>
+<kw name="Setup linux execution" library="Support">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${web_test_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${web_test}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${web_test}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20250328 10:44:10.921" endtime="20250328 10:44:10.922"/>
+</kw>
+<msg timestamp="20250328 10:44:10.922" level="INFO">${web_test_check} = True</msg>
+<status status="PASS" starttime="20250328 10:44:10.921" endtime="20250328 10:44:10.922"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${web_test_check}</arg>
+<arg>Setup Docker Execution Options</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Setup Docker Execution Options" library="Support_Web">
+<kw name="Setup Suite Metadata" library="Support_Web">
+<arg>${browser}</arg>
+<kw name="Get Browser Metadata" library="BrowserSupport">
+<var>&amp;{browser_information}</var>
+<arg>browser=${browser}</arg>
+<doc>Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}</doc>
+<msg timestamp="20250328 10:44:14.097" level="INFO">&amp;{browser_information} = { browser_version=134.0.6998.167 | driver_version=134.0.6998.165  }</msg>
+<status status="PASS" starttime="20250328 10:44:10.923" endtime="20250328 10:44:14.097"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_name</arg>
+<arg>${browser}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250328 10:44:14.097" level="INFO">Set suite metadata 'test_browser_name' to value 'chrome'.</msg>
+<status status="PASS" starttime="20250328 10:44:14.097" endtime="20250328 10:44:14.097"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_version</arg>
+<arg>${browser_information.browser_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250328 10:44:14.098" level="INFO">Set suite metadata 'test_browser_version' to value '134.0.6998.167'.</msg>
+<status status="PASS" starttime="20250328 10:44:14.098" endtime="20250328 10:44:14.098"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_driver_version</arg>
+<arg>${browser_information.driver_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250328 10:44:14.099" level="INFO">Set suite metadata 'test_driver_version' to value '134.0.6998.165 '.</msg>
+<status status="PASS" starttime="20250328 10:44:14.098" endtime="20250328 10:44:14.099"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.922" endtime="20250328 10:44:14.099"/>
+</kw>
+<kw name="Setup Global Docker Execution Options" library="Support_Web">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>None</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250328 10:44:14.101" level="INFO">${global_browser_options} = None</msg>
+<status status="PASS" starttime="20250328 10:44:14.100" endtime="20250328 10:44:14.101"/>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<var>${docker_check}</var>
+<arg>EXECUTION_ENVIRONMENT</arg>
+<arg>not_found</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<msg timestamp="20250328 10:44:14.101" level="INFO">${docker_check} = not_found</msg>
+<status status="PASS" starttime="20250328 10:44:14.101" endtime="20250328 10:44:14.101"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>"${docker_check}"!="docker"</arg>
+<arg>Log</arg>
+<arg>Not executing on Docker</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Not executing on Docker</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250328 10:44:14.102" level="INFO">Not executing on Docker</msg>
+<status status="PASS" starttime="20250328 10:44:14.102" endtime="20250328 10:44:14.102"/>
+</kw>
+<msg timestamp="20250328 10:44:14.102" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250328 10:44:14.101" endtime="20250328 10:44:14.102"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{options}</var>
+<arg>--headless</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20250328 10:44:14.102" endtime="20250328 10:44:14.102"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>@{docker_options}</arg>
+<arg>@{options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20250328 10:44:14.102" endtime="20250328 10:44:14.102"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:14.099" endtime="20250328 10:44:14.102"/>
+</kw>
+<kw name="Create Webdriver for chrome preferences" library="Support_Web">
+<kw name="Update Docker Execution Options" library="Support_Web">
+<var>${list_prefs}</var>
+<arg>${list_prefs}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${docker_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${docker_options}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${docker_options}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<msg timestamp="20250328 10:44:14.105" level="FAIL">Variable '${docker_options}' does not exist.</msg>
+<status status="FAIL" starttime="20250328 10:44:14.103" endtime="20250328 10:44:14.105"/>
+</kw>
+<msg timestamp="20250328 10:44:14.105" level="INFO">${docker_check} = False</msg>
+<status status="PASS" starttime="20250328 10:44:14.103" endtime="20250328 10:44:14.105"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${list_prefs_length}</var>
+<arg>${list_prefs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20250328 10:44:14.106" level="INFO">Length is 1</msg>
+<msg timestamp="20250328 10:44:14.106" level="INFO">${list_prefs_length} = 1</msg>
+<status status="PASS" starttime="20250328 10:44:14.106" endtime="20250328 10:44:14.106"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${list_prefs}</var>
+<arg>${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []</arg>
+<arg>Combine Lists</arg>
+<arg>${list_prefs}</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE IF</arg>
+<arg>${docker_check}</arg>
+<arg>Set Variable</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${list_prefs}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${list_prefs}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20250328 10:44:14.106" endtime="20250328 10:44:14.107"/>
+</kw>
+<msg timestamp="20250328 10:44:14.107" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250328 10:44:14.106" endtime="20250328 10:44:14.107"/>
+</kw>
+<msg timestamp="20250328 10:44:14.107" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250328 10:44:14.103" endtime="20250328 10:44:14.107"/>
+</kw>
+<kw name="Create Chrome Options for download preferences" library="Support_Web">
+<var>${chrome_options}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250328 10:44:14.108" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000294BA0D0A50&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:14.107" endtime="20250328 10:44:14.108"/>
+</kw>
+<msg timestamp="20250328 10:44:14.108" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000294BA0D0A50&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:14.107" endtime="20250328 10:44:14.108"/>
+</kw>
+<kw name="Update Preferences List" library="Support_Web">
+<arg>${chrome_options}</arg>
+<arg>@{list_prefs}</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${string_prefs}</var>
+<arg>${list_prefs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20250328 10:44:14.108" level="INFO">${string_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250328 10:44:14.108" endtime="20250328 10:44:14.108"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${string_prefs} == [[]]</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20250328 10:44:14.109" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250328 10:44:14.109" endtime="20250328 10:44:14.109"/>
+</kw>
+<for flavor="IN">
+<var>${preference}</var>
+<value>@{list_prefs}</value>
+<iter>
+<var name="${preference}"/>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${preference}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20250328 10:44:14.109" endtime="20250328 10:44:14.109"/>
+</kw>
+<status status="NOT RUN" starttime="20250328 10:44:14.109" endtime="20250328 10:44:14.109"/>
+</iter>
+<status status="NOT RUN" starttime="20250328 10:44:14.109" endtime="20250328 10:44:14.110"/>
+</for>
+<status status="PASS" starttime="20250328 10:44:14.108" endtime="20250328 10:44:14.110"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${kw_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250328 10:44:14.110" endtime="20250328 10:44:14.110"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>${chrome options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250328 10:44:14.110" level="INFO">${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000294BA0D0A50&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:14.110" endtime="20250328 10:44:14.110"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:14.103" endtime="20250328 10:44:14.111"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.922" endtime="20250328 10:44:14.111"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.922" endtime="20250328 10:44:14.111"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.921" endtime="20250328 10:44:14.111"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>environment</arg>
+<arg>${test_server}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250328 10:44:14.111" level="INFO">Set suite metadata 'environment' to value 'Dev'.</msg>
+<status status="PASS" starttime="20250328 10:44:14.111" endtime="20250328 10:44:14.112"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:10.916" endtime="20250328 10:44:14.112"/>
+</kw>
+<suite id="s1-s1" name="Test spam patch" source="D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot">
+<kw name="System Logon" library="Spam_Patch" type="SETUP">
+<kw name="Console Session Starting" library="CustomSapGuiLibrary">
+<doc>Switches the active RDP session to console. Fails if already in console.</doc>
+<msg timestamp="20250328 10:44:14.969" level="INFO">rdp-tcp#0 
+Switched session 2 to console</msg>
+<status status="PASS" starttime="20250328 10:44:14.230" endtime="20250328 10:44:14.970"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:19.980" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:14.971" endtime="20250328 10:44:19.980"/>
+</kw>
+<kw name="Start Process" library="Process">
+<arg>${symvar('EXE_PAD')}</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20250328 10:44:19.981" level="INFO">Sym.Dev.EXE_PAD: C:\Program Files\SAP\FrontEnd\SAPGUI\saplogon.exe</msg>
+<msg timestamp="20250328 10:44:19.981" level="INFO">Starting process:
+"C:\Program Files\SAP\FrontEnd\SAPGUI\saplogon.exe"</msg>
+<status status="PASS" starttime="20250328 10:44:19.980" endtime="20250328 10:44:19.985"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:21.986" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:19.985" endtime="20250328 10:44:21.986"/>
+</kw>
+<kw name="Connect To Session" library="CustomSapGuiLibrary">
+<doc>Connects to an open session SAP.</doc>
+<status status="PASS" starttime="20250328 10:44:21.986" endtime="20250328 10:44:21.998"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:23.999" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:21.998" endtime="20250328 10:44:24.001"/>
+</kw>
+<kw name="Open Connection" library="CustomSapGuiLibrary">
+<arg>${symvar('Connection_Name')}</arg>
+<doc>Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.</doc>
+<msg timestamp="20250328 10:44:24.002" level="INFO">Sym.Dev.Connection_Name: PRD</msg>
+<status status="PASS" starttime="20250328 10:44:24.001" endtime="20250328 10:44:25.311"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:27.312" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:25.311" endtime="20250328 10:44:27.312"/>
+</kw>
+<kw name="Input Text" library="CustomSapGuiLibrary">
+<arg>wnd[0]/usr/txtRSYST-MANDT</arg>
+<arg>${symvar('SAP_CLIENT')}</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<msg timestamp="20250328 10:44:27.314" level="INFO">Sym.Dev.SAP_CLIENT: 000</msg>
+<msg timestamp="20250328 10:44:27.321" level="INFO">Typing text '000' into text field 'wnd[0]/usr/txtRSYST-MANDT'.</msg>
+<status status="PASS" starttime="20250328 10:44:27.313" endtime="20250328 10:44:27.321"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:28.322" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250328 10:44:27.321" endtime="20250328 10:44:28.322"/>
+</kw>
+<kw name="Input Text" library="CustomSapGuiLibrary">
+<arg>wnd[0]/usr/txtRSYST-BNAME</arg>
+<arg>${symvar('SAP_USER')}</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<msg timestamp="20250328 10:44:28.323" level="INFO">Sym.Dev.SAP_USER: DDIC</msg>
+<msg timestamp="20250328 10:44:28.332" level="INFO">Typing text 'DDIC' into text field 'wnd[0]/usr/txtRSYST-BNAME'.</msg>
+<status status="PASS" starttime="20250328 10:44:28.322" endtime="20250328 10:44:28.332"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:29.333" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250328 10:44:28.332" endtime="20250328 10:44:29.333"/>
+</kw>
+<kw name="Input Password" library="CustomSapGuiLibrary">
+<arg>wnd[0]/usr/pwdRSYST-BCODE</arg>
+<arg>%{SAP_PASSWORD}</arg>
+<doc>Inserts the given password into the text field identified by locator.
+The password is not recorded in the log.</doc>
+<msg timestamp="20250328 10:44:29.339" level="INFO">Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.</msg>
+<status status="PASS" starttime="20250328 10:44:29.333" endtime="20250328 10:44:29.339"/>
+</kw>
+<kw name="Send Vkey" library="CustomSapGuiLibrary">
+<arg>0</arg>
+<doc>Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.</doc>
+<status status="PASS" starttime="20250328 10:44:29.339" endtime="20250328 10:44:29.728"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:31.729" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:29.728" endtime="20250328 10:44:31.729"/>
+</kw>
+<kw name="Multiple Logon Handling" library="CustomSapGuiLibrary">
+<var>${logon_status}</var>
+<arg>wnd[1]</arg>
+<arg>wnd[1]/usr/radMULTI_LOGON_OPT2</arg>
+<msg timestamp="20250328 10:44:31.730" level="INFO">Error: (-2147352567, 'Exception occurred.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\sapfront.HLP', 393215, 0), None)</msg>
+<msg timestamp="20250328 10:44:31.730" level="INFO">${logon_status} = None</msg>
+<status status="PASS" starttime="20250328 10:44:31.729" endtime="20250328 10:44:31.730"/>
+</kw>
+<if>
+<branch type="IF" condition="'${logon_status}' == &quot;Multiple logon found. Please terminate all the logon &amp; proceed&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**logon_status**splitKeyValue**${logon_status}**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250328 10:44:31.731" endtime="20250328 10:44:31.731"/>
+</kw>
+<status status="NOT RUN" starttime="20250328 10:44:31.731" endtime="20250328 10:44:31.731"/>
+</branch>
+<status status="PASS" starttime="20250328 10:44:31.731" endtime="20250328 10:44:31.731"/>
+</if>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:32.732" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250328 10:44:31.731" endtime="20250328 10:44:32.732"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:14.229" endtime="20250328 10:44:32.732"/>
+</kw>
+<test id="s1-s1-t1" name="Check_Spam_update" line="8">
+<kw name="Spam Transaction" library="Spam_Patch">
+<kw name="Run Transaction" library="CustomSapGuiLibrary">
+<arg>spam</arg>
+<doc>Runs a Sap transaction. An error is given when an unknown transaction is specified.</doc>
+<status status="PASS" starttime="20250328 10:44:32.733" endtime="20250328 10:44:33.352"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:38.353" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:33.352" endtime="20250328 10:44:38.353"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>01_spam.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:38.356" level="WARN">Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.</msg>
+<msg timestamp="20250328 10:44:38.357" level="INFO" html="true">&lt;a href="01_spam.jpg"&gt;&lt;img src="01_spam.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:38.354" endtime="20250328 10:44:38.357"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:32.733" endtime="20250328 10:44:38.357"/>
+</kw>
+<kw name="Certificate Verification" library="Spam_Patch">
+<kw name="Get Maintenance Certificate Text" library="CustomSapGuiLibrary">
+<arg>wnd[0]/sbar/pane[0]</arg>
+<msg timestamp="20250328 10:44:38.360" level="INFO">License available to proceed further</msg>
+<status status="PASS" starttime="20250328 10:44:38.358" endtime="20250328 10:44:38.360"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:40.361" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:38.361" endtime="20250328 10:44:40.361"/>
+</kw>
+<kw name="Console Session Middle" library="CustomSapGuiLibrary">
+<doc>Switches the active RDP session to console. Fails if already in console.</doc>
+<msg timestamp="20250328 10:44:43.641" level="INFO">Disc 
+Session is diconnected
+Switched session 2 to console</msg>
+<status status="PASS" starttime="20250328 10:44:40.362" endtime="20250328 10:44:43.641"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>02_Certificate.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:43.698" level="INFO" html="true">&lt;a href="02_Certificate.jpg"&gt;&lt;img src="02_Certificate.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:43.642" endtime="20250328 10:44:43.698"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:38.358" endtime="20250328 10:44:43.699"/>
+</kw>
+<kw name="Loading package" library="Spam_Patch">
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[0]/mbar/menu[0]/menu[0]/menu[1]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250328 10:44:43.699" endtime="20250328 10:44:43.812"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:45.813" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:43.812" endtime="20250328 10:44:45.813"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>03_Load_1.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:45.856" level="INFO" html="true">&lt;a href="03_Load_1.jpg"&gt;&lt;img src="03_Load_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:45.814" endtime="20250328 10:44:45.856"/>
+</kw>
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[1]/usr/btnSPOP-OPTION1</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250328 10:44:45.856" endtime="20250328 10:44:49.428"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:51.429" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:49.428" endtime="20250328 10:44:51.429"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>04_Load_2.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:51.463" level="INFO" html="true">&lt;a href="04_Load_2.jpg"&gt;&lt;img src="04_Load_2.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:51.429" endtime="20250328 10:44:51.463"/>
+</kw>
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[0]/tbar[0]/btn[3]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250328 10:44:51.463" endtime="20250328 10:44:51.581"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:53.582" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:51.581" endtime="20250328 10:44:53.582"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>05_Load_3.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:53.614" level="INFO" html="true">&lt;a href="05_Load_3.jpg"&gt;&lt;img src="05_Load_3.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:53.583" endtime="20250328 10:44:53.615"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:43.699" endtime="20250328 10:44:53.615"/>
+</kw>
+<kw name="Display/Define" library="Spam_Patch">
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[0]/usr/btnPAT100-QUEUE</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250328 10:44:53.615" endtime="20250328 10:44:54.149"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:56.151" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:54.150" endtime="20250328 10:44:56.151"/>
+</kw>
+<kw name="Console Session Middle" library="CustomSapGuiLibrary">
+<doc>Switches the active RDP session to console. Fails if already in console.</doc>
+<msg timestamp="20250328 10:44:56.192" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250328 10:44:56.151" endtime="20250328 10:44:56.192"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>06_Display.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250328 10:44:56.232" level="INFO" html="true">&lt;a href="06_Display.jpg"&gt;&lt;img src="06_Display.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250328 10:44:56.192" endtime="20250328 10:44:56.232"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:53.615" endtime="20250328 10:44:56.232"/>
+</kw>
+<tag>Regression</tag>
+<tag>spampatch</tag>
+<status status="PASS" starttime="20250328 10:44:32.732" endtime="20250328 10:44:56.232"/>
+</test>
+<kw name="System Logout" library="Spam_Patch" type="TEARDOWN">
+<kw name="Run Transaction" library="CustomSapGuiLibrary">
+<arg>/nex</arg>
+<doc>Runs a Sap transaction. An error is given when an unknown transaction is specified.</doc>
+<status status="PASS" starttime="20250328 10:44:56.233" endtime="20250328 10:44:56.250"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:44:58.251" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:44:56.250" endtime="20250328 10:44:58.251"/>
+</kw>
+<kw name="Console Session Close" library="CustomSapGuiLibrary">
+<doc>Disconnect the active session (if it's active on console).</doc>
+<msg timestamp="20250328 10:44:58.416" level="INFO">console 
+Session is active, disconnecting now...</msg>
+<status status="PASS" starttime="20250328 10:44:58.252" endtime="20250328 10:44:58.418"/>
+</kw>
+<kw name="Create Pdf" library="PDF">
+<arg>${screenshot_directory}</arg>
+<arg>${output_pdf}</arg>
+<status status="PASS" starttime="20250328 10:44:58.419" endtime="20250328 10:45:00.276"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250328 10:45:02.277" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250328 10:45:00.276" endtime="20250328 10:45:02.277"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:56.233" endtime="20250328 10:45:02.278"/>
+</kw>
+<status status="PASS" starttime="20250328 10:44:14.112" endtime="20250328 10:45:02.278"/>
+</suite>
+<doc>Testing functionality through Robot Framework</doc>
+<meta name="environment">Dev</meta>
+<meta name="test_browser_name">chrome</meta>
+<meta name="test_browser_version">134.0.6998.167</meta>
+<meta name="test_driver_version">134.0.6998.165 </meta>
+<meta name="test_environment">Dev</meta>
+<meta name="test_freeze_dependencies">astroid==3.3.9,attrs==25.3.0,beautifulsoup4==4.13.3,bs4==0.0.2,certifi==2025.1.31,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,colorama==0.4.6,cryptography==44.0.2,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.12,GitPython==3.1.44,h11==0.14.0,idna==3.10,isort==6.0.1,Jinja2==3.1.6,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.1,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,MouseInfo==0.1.3,mss==10.0.0,natsort==8.4.0,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pathspec==0.11.2,pillow==11.1.0,pip==25.0,platformdirs==4.3.6,ply==3.11,PyAutoGUI==0.9.54,pycparser==2.22,PyGetWindow==0.0.9,Pygments==2.19.1,pylint==3.3.5,PyMsgBox==1.0.9,pyperclip==1.9.0,PyRect==0.2.0,PyScreeze==1.0.1,PySocks==1.7.1,pytweening==1.2.0,pywin32==310,PyYAML==6.0.2,referencing==0.36.2,reportlab==4.3.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.23.1,selenium==4.9.1,setuptools==76.1.0,smmap==5.0.2,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.29.0,trio-websocket==0.12.2,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1,wrapt==1.17.2,wsproto==1.2.0</meta>
+<status status="PASS" starttime="20250328 10:44:10.636" endtime="20250328 10:45:02.356"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">spampatch</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test spam patch">Tests.Test spam patch</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250328 10:44:38.356" level="WARN">Taking screenshot failed: OSError: screen grab failed
+Make sure tests are run with a physical or virtual display.</msg>
+</errors>
+</robot>

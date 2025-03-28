@@ -1463,6 +1463,7 @@ class CustomSapGuiLibrary:
                     if session_state == "Disc":
                         print(f"Session is diconnected")
                         subprocess.run(f"tscon {session_id} /dest:console", shell=True)
+                        time.sleep(3)
                         print(f"Switched session {session_id} to console")
                         break 
                     else:

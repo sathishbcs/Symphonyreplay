@@ -1,0 +1,14 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+Check_Spam_update                                                     | PASS |
+------------------------------------------------------------------------------
+Tests.Test spam patch                                                 | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\87f4b1f9-af73-41ad-9b01-72d070a30741\pabot_results\0\Output.xml
