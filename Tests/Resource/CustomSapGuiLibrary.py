@@ -1443,3 +1443,32 @@ class CustomSapGuiLibrary:
         except Exception as e:
             print(f"Failed to switch session: {e}")
             raise
+
+    def console_session_middle(self):
+        """Switches the active RDP session to console. Fails if already in console."""
+        try:
+            result = subprocess.run('query session', capture_output=True, text=True, shell=True)
+
+            for line in result.stdout.splitlines():
+                if ">" in line:
+                    parts = line.split()
+                    if len(parts) < 3:
+                        continue
+
+                    session_name = parts[0].lstrip(">").lower()
+                    session_id = parts[2]
+                    session_state = parts[3]
+                    print(f" {session_name} ")
+
+                    # Fail if already on console
+                    if session_state == "Disc":
+                        print(f"Session is diconnected")
+                        subprocess.run(f"tscon {session_id} /dest:console", shell=True)
+                        print(f"Switched session {session_id} to console")
+                        break                    
+            else:
+                raise Exception("No active session found.")
+
+        except Exception as e:
+            print(f"Failed to switch session: {e}")
+            raise

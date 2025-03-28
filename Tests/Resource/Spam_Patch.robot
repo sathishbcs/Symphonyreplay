@@ -59,6 +59,7 @@ Spam Transaction
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    02_Certificate.jpg
 
 Loading package
@@ -76,6 +77,7 @@ Loading package
 Display/Define
     CustomSapGuiLibrary.Click Element    wnd[0]/usr/btnPAT100-QUEUE
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    06_Display.jpg
 
 Spam Component selection
