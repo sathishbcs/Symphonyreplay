@@ -1,0 +1,40 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam patch                                                         
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:4
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:29
+      Ensure Console Session    
+______________________________________________________________________________
+Check_Spam_update                                                     | FAIL |
+Parent suite setup failed:
+Session is already in console. Failing as requested.
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_patch.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Patch.robot:153
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test spam patch                                                 | FAIL |
+Suite setup failed:
+Session is already in console. Failing as requested.
+
+Also suite teardown failed:
+AttributeError: 'int' object has no attribute 'findById'
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\d5abc886-23a2-4146-b97b-2ee9c46d5ab1\pabot_results\0\Output.xml
