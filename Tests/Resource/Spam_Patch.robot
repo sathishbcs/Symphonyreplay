@@ -154,5 +154,6 @@ Confirm Queue
 System Logout
     Run Transaction   /nex
     Sleep    2
+    CustomSapGuiLibrary.Console Session Close
     Create Pdf    ${screenshot_directory}   ${output_pdf}    
     Sleep   2

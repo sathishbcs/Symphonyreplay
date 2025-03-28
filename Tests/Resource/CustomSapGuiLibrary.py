@@ -1452,7 +1452,38 @@ class CustomSapGuiLibrary:
             for line in result.stdout.splitlines():
                 if ">" in line:
                     parts = line.split()
-                    if len(parts) < 3:
+                    if len(parts) < 4:
+                        continue
+
+                    session_id = parts[2]
+                    session_state = parts[3]
+                    print(f" {session_state} ")
+
+                    # Fail if already on console
+                    if session_state == "Disc":
+                        print(f"Session is diconnected")
+                        subprocess.run(f"tscon {session_id} /dest:console", shell=True)
+                        print(f"Switched session {session_id} to console")
+                        break 
+                    else:
+                        print("Session is Active, no action needed.")
+                    break                    
+            else:
+                raise Exception("No active session found.")
+
+        except Exception as e:
+            print(f"Failed to switch session: {e}")
+            raise
+
+    def console_session_close(self):
+        """Disconnect the active session (if it's active on console)."""
+        try:
+            result = subprocess.run('query session', capture_output=True, text=True, shell=True)
+
+            for line in result.stdout.splitlines():
+                if ">" in line:
+                    parts = line.split()
+                    if len(parts) < 4:
                         continue
 
                     session_name = parts[0].lstrip(">").lower()
@@ -1461,11 +1492,17 @@ class CustomSapGuiLibrary:
                     print(f" {session_name} ")
 
                     # Fail if already on console
-                    if session_state == "Disc":
-                        print(f"Session is diconnected")
-                        subprocess.run(f"tscon {session_id} /dest:console", shell=True)
-                        print(f"Switched session {session_id} to console")
-                        break                    
+                    if session_name == "console":
+                        if session_state == "Disc":
+                            print("Session is already disconnected.") 
+                        elif session_state == "Active":
+                            print("Session is active, disconnecting now...")
+                            subprocess.run(f"tsdiscon {session_id}", shell=True)
+                        else:
+                            print(f"Session is in unexpected state: {session_state}")
+                    else:
+                        print("Not a console session, skipping.")
+                    break                    
             else:
                 raise Exception("No active session found.")
 
