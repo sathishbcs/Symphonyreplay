@@ -1431,7 +1431,25 @@ class CustomSapGuiLibrary:
 
                     # Fail if already on console
                     if session_name == "console":
-                        raise Exception("Session is already in console.")
+                        # raise Exception("Session is already in console.")
+                        print("Session is already in console.")
+                    
+                    time.sleep(120)
+                    result = subprocess.run('query session', capture_output=True, text=True, shell=True)
+
+                    for line in result.stdout.splitlines():
+                        if ">" in line:
+                            parts = line.split()
+                            if len(parts) < 3:
+                                continue
+
+                            session_name = parts[0].lstrip(">").lower()
+                            session_id = parts[2]
+                            print(f" {session_name} ")
+
+                            # Fail if already on console
+                            if session_name == "console":
+                                raise Exception("Session is already in console and waited for 120Sec.")
 
                     # Switch session to console
                     subprocess.run(f"tscon {session_id} /dest:console", shell=True)
