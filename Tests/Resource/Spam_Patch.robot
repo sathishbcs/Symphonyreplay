@@ -26,7 +26,7 @@ ${output_pdf}   ${OUTPUT_DIR}\\output.pdf
 
 *** Keywords *** 
 System Logon
-    # CustomSapGuiLibrary.Console Session Starting
+    CustomSapGuiLibrary.Console Session Starting
     Sleep   5
     Start Process    ${symvar('EXE_PAD')}
     Sleep   2
@@ -59,7 +59,7 @@ Spam Transaction
 Certificate Verification
     Get Maintenance Certificate Text    wnd[0]/sbar/pane[0]
     Sleep    2
-    # CustomSapGuiLibrary.Console Session Middle
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    02_Certificate.jpg
 
 Loading package
@@ -77,7 +77,7 @@ Loading package
 Display/Define
     CustomSapGuiLibrary.Click Element    wnd[0]/usr/btnPAT100-QUEUE
     Sleep    2
-    # CustomSapGuiLibrary.Console Session Middle
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    06_Display.jpg
 
 Spam Component selection
@@ -154,6 +154,6 @@ Confirm Queue
 System Logout
     Run Transaction   /nex
     Sleep    2
-    # CustomSapGuiLibrary.Console Session Close
+    CustomSapGuiLibrary.Console Session Close
     Create Pdf    ${screenshot_directory}   ${output_pdf}    
     Sleep   2
