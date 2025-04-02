@@ -66,12 +66,15 @@ Loading package
     
     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    03_Load_1.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnSPOP-OPTION1
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    04_Load_2.jpg
     CustomSapGuiLibrary.Click Element    wnd[0]/tbar[0]/btn[3]
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    05_Load_3.jpg
 
 Display/Define
@@ -85,9 +88,11 @@ Spam Component selection
     Log    ${row}
     Select Table Row    wnd[1]/usr/cntlCOMP_ONLY_CONTROL/shellcont/shell    ${row}
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    07_Spam_component1.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep   2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    08_Spam_component2.jpg
 
 Spam Patch selection
@@ -96,6 +101,7 @@ Spam Patch selection
     Sleep    2
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep   2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    09_Spam_patch1.jpg
 
 
@@ -104,34 +110,43 @@ Important SAP note handling
     CustomSapGuiLibrary.Is Imp Notes Existing   wnd[2]  wnd[2]/tbar[0]/btn[0]
     # CustomSapGuiLibrary.Click Element    wnd[2]/tbar[0]/btn[0]
     CustomSapGuiLibrary.Is Imp Notes Existing   wnd[1]  wnd[1]/tbar[0]/btn[0]
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    10_SAP_note.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/btnBUTTON_2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot  11_Modification.jpg  
    
 Importing queue from support package
     CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[3]
     # CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     CustomSapGuiLibrary.Is Imp Notes Existing  wnd[1]  wnd[1]/tbar[0]/btn[0]
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    12_Imp_que_1.jpg
     #import queue-start options
-    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[27] 
+    CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[27]
+    CustomSapGuiLibrary.Console Session Middle 
     Take Screenshot    13_Start_options.jpg
 
     #CLicking "Start in Dialog"
     Sleep   1
     CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC1/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0701/radLAY0700-RB1_DIA
     Sleep   2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    14_prep_dial.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2
     Sleep   2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    15_import_select.jpg
     #CLicking "Start in background"
     CustomSapGuiLibrary.Select Radio Button    wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0702/radLAY0700-RB2_BTCHIM
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    16_Start_bkgd.jpg
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep   1
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    17_Start_bkgd_2.jpg    
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[25]
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    18_Start_bkgd_3.jpg
     Sleep    1
 
@@ -139,10 +154,12 @@ Importing queue from support package
 Confirm Queue
     CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
     Sleep    2
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    19_User_defined.jpg
     ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${interrupt_str1}    ${transport_id}    ${button_id}    ${status_line}    ${refresh_id}    ${startoption_spam_id}    ${radio_button_id}    ${startoptionok_id}    ${Import_id}    ${error_button_id}
     Log    ${cell_text_1}
     #CustomSapGuiLibrary.Click Element    wnd[0]/mbar/menu[0]/menu[5]
+    CustomSapGuiLibrary.Console Session Middle
     Take Screenshot    20_Confirmed_queue.jpg
     #Status check: No queue has been defined
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}

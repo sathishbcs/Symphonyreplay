@@ -1434,7 +1434,7 @@ class CustomSapGuiLibrary:
                         # raise Exception("Session is already in console.")
                         print("Session is already in console.")
                     
-                    time.sleep(120)
+                    time.sleep(60)
                     result = subprocess.run('query session', capture_output=True, text=True, shell=True)
 
                     for line in result.stdout.splitlines():
