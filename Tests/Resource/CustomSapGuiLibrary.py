@@ -1449,7 +1449,7 @@ class CustomSapGuiLibrary:
 
                             # Fail if already on console
                             if session_name == "console":
-                                raise Exception("Session is already in console and waited for 120Sec.")
+                                raise Exception("Session is already in console and waited for 60 Sec.")
 
                     # Switch session to console
                     subprocess.run(f"tscon {session_id} /dest:console", shell=True)
