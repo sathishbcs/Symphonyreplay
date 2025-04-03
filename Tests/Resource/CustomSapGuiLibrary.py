@@ -794,6 +794,7 @@ class CustomSapGuiLibrary:
 
         This keyword uses Robots' internal `Screenshot` library.
         """
+        self.console_session_middle()
         if self.take_screenshots == True:
             self.screenshot.take_screenshot(screenshot_name)
 
