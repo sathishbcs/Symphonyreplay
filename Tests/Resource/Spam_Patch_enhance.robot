@@ -137,12 +137,15 @@ Import Option
     CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
     Sleep    2
     Take Screenshot    20_User_defined.jpg
+    CustomSapGuiLibrary.Window Handling    wnd[1]    Information    wnd[1]/tbar[0]/btn[30]
+    Sleep    2
+    Take Screenshot    21_Information_handling.jpg
  
 Confirm Queue
     ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${interrupt_str1}    ${transport_id}    ${button_id}    ${status_line}    ${refresh_id}    ${startoption_spam_id}    ${radio_button_id}    ${startoptionok_id}    ${Import_id}    ${error_button_id}
     Log    ${cell_text_1}
     Sleep   2
-    Take Screenshot    21_Confirmed_queue.jpg
+    Take Screenshot    22_Confirmed_queue.jpg
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
     Sleep   2
     # Take Screenshot    22_Status_Confirmed_queue1.jpg
