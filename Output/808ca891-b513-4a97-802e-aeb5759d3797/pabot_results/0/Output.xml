@@ -737,4 +737,507 @@ Session is Active, no action needed.</msg>
 either at import of with keyword `enable screenshots on error`.</doc>
 <msg timestamp="20250806 10:43:55.810" level="INFO" html="true">&lt;a href="15_prep_dial.jpg"&gt;&lt;img src="15_prep_dial.jpg" width="800px"&gt;&lt;/a&gt;</msg>
 <msg timestamp="20250806 10:43:55.810" level="INFO">Active 
-Session is Active, no action needed.
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:43:55.725" endtime="20250806 10:43:55.810"/>
+</kw>
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250806 10:43:55.810" endtime="20250806 10:43:55.871"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 10:43:57.871" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 10:43:55.871" endtime="20250806 10:43:57.872"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>16_import_select.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 10:43:57.966" level="INFO" html="true">&lt;a href="16_import_select.jpg"&gt;&lt;img src="16_import_select.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 10:43:57.966" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:43:57.872" endtime="20250806 10:43:57.966"/>
+</kw>
+<kw name="Select Radio Button" library="CustomSapGuiLibrary">
+<arg>wnd[1]/usr/tabsSTART_OPTIONS/tabpSTART_FC2/ssubSTART_OPTIONS_SCA:SAPLOCS_UI:0702/radLAY0700-RB2_BTCHIM</arg>
+<doc>Sets radio button to the specified value.</doc>
+<status status="PASS" starttime="20250806 10:43:57.966" endtime="20250806 10:43:58.005"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 10:44:00.006" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 10:43:58.005" endtime="20250806 10:44:00.006"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>17_import_bkgd.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 10:44:00.091" level="INFO" html="true">&lt;a href="17_import_bkgd.jpg"&gt;&lt;img src="17_import_bkgd.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 10:44:00.091" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:44:00.007" endtime="20250806 10:44:00.091"/>
+</kw>
+<status status="PASS" starttime="20250806 10:43:53.718" endtime="20250806 10:44:00.092"/>
+</kw>
+<kw name="Import Option" library="Spam_Patch_enhance">
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250806 10:44:00.092" endtime="20250806 10:44:00.183"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 10:44:01.184" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250806 10:44:00.184" endtime="20250806 10:44:01.185"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>18_import1.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 10:44:01.404" level="INFO" html="true">&lt;a href="18_import1.jpg"&gt;&lt;img src="18_import1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 10:44:01.404" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:44:01.185" endtime="20250806 10:44:01.404"/>
+</kw>
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[1]/tbar[0]/btn[25]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250806 10:44:01.404" endtime="20250806 10:44:01.502"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>19_import2.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 10:44:01.596" level="INFO" html="true">&lt;a href="19_import2.jpg"&gt;&lt;img src="19_import2.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 10:44:01.596" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:44:01.502" endtime="20250806 10:44:01.596"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 10:44:03.597" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 10:44:01.596" endtime="20250806 10:44:03.597"/>
+</kw>
+<kw name="Is Spam User Defined Existing" library="CustomSapGuiLibrary">
+<arg>wnd[1]</arg>
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<msg timestamp="20250806 10:45:28.302" level="INFO">Window exists</msg>
+<status status="PASS" starttime="20250806 10:44:03.597" endtime="20250806 10:45:28.302"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 10:45:30.303" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 10:45:28.303" endtime="20250806 10:45:30.303"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>20_User_defined.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 10:45:30.375" level="INFO" html="true">&lt;a href="20_User_defined.jpg"&gt;&lt;img src="20_User_defined.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 10:45:30.376" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 10:45:30.303" endtime="20250806 10:45:30.376"/>
+</kw>
+<status status="PASS" starttime="20250806 10:44:00.092" endtime="20250806 10:45:30.376"/>
+</kw>
+<kw name="Confirm Queue" library="Spam_Patch_enhance">
+<kw name="Get Finish Cell Text1" library="CustomSapGuiLibrary">
+<var>${cell_text_1}</var>
+<arg>${finish_str}</arg>
+<arg>${interrupt_str1}</arg>
+<arg>${transport_id}</arg>
+<arg>${button_id}</arg>
+<arg>${status_line}</arg>
+<arg>${refresh_id}</arg>
+<arg>${startoption_spam_id}</arg>
+<arg>${radio_button_id}</arg>
+<arg>${startoptionok_id}</arg>
+<arg>${Import_id}</arg>
+<arg>${error_button_id}</arg>
+<msg timestamp="20250806 13:00:18.753" level="INFO">Import job scheduled
+Import job scheduled
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Perform Adjustment
+Perform Adjustment Perform Adjustment
+Interruption caused
+Window title found: SPAM: Start options for the queue
+Title mismatch. Expected: 'SPAM: Import: Queue', but got: 'SPAM: Start options for the queue'
+Interruption resolved and process continued
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Queue import
+Confirm queue
+Confirm queue Confirm queue
+Installation Successful</msg>
+<msg timestamp="20250806 13:00:18.753" level="INFO">${cell_text_1} = Confirm queue</msg>
+<status status="PASS" starttime="20250806 10:45:30.376" endtime="20250806 13:00:18.753"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_text_1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250806 13:00:18.754" level="INFO">Confirm queue</msg>
+<status status="PASS" starttime="20250806 13:00:18.753" endtime="20250806 13:00:18.754"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 13:00:20.755" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 13:00:18.754" endtime="20250806 13:00:20.755"/>
+</kw>
+<kw name="Take Screenshot" library="CustomSapGuiLibrary">
+<arg>21_Confirmed_queue.jpg</arg>
+<doc>Takes a screenshot, only if 'screenshots on error' has been enabled,
+either at import of with keyword `enable screenshots on error`.</doc>
+<msg timestamp="20250806 13:00:20.845" level="INFO" html="true">&lt;a href="21_Confirmed_queue.jpg"&gt;&lt;img src="21_Confirmed_queue.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250806 13:00:20.845" level="INFO">Active 
+Session is Active, no action needed.</msg>
+<status status="PASS" starttime="20250806 13:00:20.755" endtime="20250806 13:00:20.845"/>
+</kw>
+<kw name="No Queue Pending" library="CustomSapGuiLibrary">
+<arg>${no_Queue_id}</arg>
+<msg timestamp="20250806 13:00:20.850" level="INFO">Queue is available</msg>
+<status status="PASS" starttime="20250806 13:00:20.846" endtime="20250806 13:00:20.850"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 13:00:22.851" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 13:00:20.850" endtime="20250806 13:00:22.851"/>
+</kw>
+<kw name="Click Element" library="CustomSapGuiLibrary">
+<arg>wnd[1]/tbar[0]/btn[27]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250806 13:00:22.851" endtime="20250806 13:00:22.960"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 13:00:24.961" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 13:00:22.960" endtime="20250806 13:00:24.962"/>
+</kw>
+<status status="PASS" starttime="20250806 10:45:30.376" endtime="20250806 13:00:24.962"/>
+</kw>
+<tag>Regression</tag>
+<tag>spampatchenhance</tag>
+<status status="PASS" starttime="20250806 10:43:47.186" endtime="20250806 13:00:24.962"/>
+</test>
+<kw name="System Logout" library="Spam_Patch_enhance" type="TEARDOWN">
+<kw name="Run Transaction" library="CustomSapGuiLibrary">
+<arg>/nex</arg>
+<doc>Runs a Sap transaction. An error is given when an unknown transaction is specified.</doc>
+<status status="PASS" starttime="20250806 13:00:24.964" endtime="20250806 13:00:25.005"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 13:00:27.006" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 13:00:25.006" endtime="20250806 13:00:27.007"/>
+</kw>
+<kw name="Create Pdf" library="PDF">
+<arg>${screenshot_directory}</arg>
+<arg>${output_pdf}</arg>
+<status status="PASS" starttime="20250806 13:00:27.007" endtime="20250806 13:00:37.648"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250806 13:00:39.649" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250806 13:00:37.648" endtime="20250806 13:00:39.649"/>
+</kw>
+<status status="PASS" starttime="20250806 13:00:24.964" endtime="20250806 13:00:39.649"/>
+</kw>
+<status status="PASS" starttime="20250806 10:42:49.886" endtime="20250806 13:00:39.650"/>
+</suite>
+<doc>Testing functionality through Robot Framework</doc>
+<meta name="environment">Dev</meta>
+<meta name="test_browser_name">chrome</meta>
+<meta name="test_browser_version">138.0.7204.184</meta>
+<meta name="test_driver_version">138.0.7204.183 </meta>
+<meta name="test_environment">Dev</meta>
+<meta name="test_freeze_dependencies">astroid==3.3.9,attrs==25.3.0,beautifulsoup4==4.13.3,bs4==0.0.2,certifi==2025.1.31,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,colorama==0.4.6,cryptography==44.0.2,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.12,GitPython==3.1.44,h11==0.14.0,idna==3.10,isort==6.0.1,Jinja2==3.1.6,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.1,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,MouseInfo==0.1.3,mss==10.0.0,natsort==8.4.0,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pathspec==0.11.2,pillow==11.1.0,pip==25.0,platformdirs==4.3.6,ply==3.11,PyAutoGUI==0.9.54,pycparser==2.22,PyGetWindow==0.0.9,Pygments==2.19.1,pylint==3.3.5,PyMsgBox==1.0.9,pyperclip==1.9.0,PyRect==0.2.0,PyScreeze==1.0.1,PySocks==1.7.1,pytweening==1.2.0,pywin32==310,PyYAML==6.0.2,referencing==0.36.2,reportlab==4.3.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.23.1,selenium==4.9.1,setuptools==76.1.0,smmap==5.0.2,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.29.0,trio-websocket==0.12.2,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1,wrapt==1.17.2,wsproto==1.2.0</meta>
+<status status="PASS" starttime="20250806 10:42:46.093" endtime="20250806 13:00:39.752"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Regression</stat>
+<stat pass="2" fail="0" skip="0">spampatchenhance</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Test spam patch enhance">Tests.Test spam patch enhance</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
