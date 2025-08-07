@@ -131,6 +131,14 @@ Import Option
     CustomSapGuiLibrary.Click Element    wnd[1]/tbar[0]/btn[25]
     Take Screenshot    19_import2.jpg
     Sleep    2
+    ${title}    Get Window Title    wnd[0]
+    IF    '${title}' == 'Transport requests in TMS which should be imported before'
+        Click Element    wnd[0]/tbar[1]/btn[20]
+        Sleep    2
+        Take Screenshot    23_Transport_window.jpg
+    ELSE
+        Log    ${title}
+    END
     # CustomSapGuiLibrary.is errors during disassembling existing    wnd[0]   wnd[0]/tbar[1]/btn[20]
     # Sleep    2
     # Take Screenshot    021_ignore.jpg
@@ -146,14 +154,7 @@ Import Option
     # CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
     # Sleep    2
     # Take Screenshot    20_User_defined.jpg
-    ${title}    Get Window Title    wnd[0]
-    IF    '${title}' == 'Transport requests in TMS which should be imported before'
-        Click Element    wnd[0]/tbar[1]/btn[20]
-        Sleep    2
-        Take Screenshot    23_Transport_window.jpg
-    ELSE
-        Log    ${title}
-    END
+    
     ${element_present}    Element Should Be Present    wnd[1]
     IF    '${element_present}' == 'True'
         CustomSapGuiLibrary.Window Handling    wnd[1]    Information    wnd[1]/tbar[0]/btn[30]
