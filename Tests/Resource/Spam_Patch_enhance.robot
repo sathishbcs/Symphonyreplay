@@ -149,7 +149,6 @@ Import Option
         Take Screenshot    20_User_defined.jpg
     ELSE
         Log    No spam user window exists
-        
     END
     # CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
     # Sleep    2
@@ -172,24 +171,8 @@ Confirm Queue
     Log    ${cell_text_1}
     Sleep   2
     Take Screenshot    22_Confirmed_queue.jpg
-    ${title}    Get Window Title    wnd[0]
-    IF    '${title}' == 'Transport requests in TMS which should be imported before'
-        Click Element    wnd[0]/tbar[1]/btn[20]
-        Sleep    2
-        Take Screenshot    23_Transport_window.jpg
-    ELSE
-        Log    ${title}
-    END
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
     Sleep   2
-    ${title}    Get Window Title    wnd[0]
-    IF    '${title}' == 'Transport requests in TMS which should be imported before'
-        Click Element    wnd[0]/tbar[1]/btn[20]
-        Sleep    2
-        Take Screenshot    24_Transport_window.jpg
-    ELSE
-        Log    ${title}
-    END
     # Take Screenshot    22_Status_Confirmed_queue1.jpg
     CustomSapGuiLibrary.Click Element   wnd[1]/tbar[0]/btn[27]
     Sleep   2
