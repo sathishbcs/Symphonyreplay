@@ -134,24 +134,58 @@ Import Option
     # CustomSapGuiLibrary.is errors during disassembling existing    wnd[0]   wnd[0]/tbar[1]/btn[20]
     # Sleep    2
     # Take Screenshot    021_ignore.jpg
-    CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
-    Sleep    2
-    Take Screenshot    20_User_defined.jpg
-    CustomSapGuiLibrary.Window Handling    wnd[1]    Information    wnd[1]/tbar[0]/btn[30]
-    Sleep    2
-    Take Screenshot    21_Information_handling.jpg
+    ${element_present}    Element Should Be Present    wnd[1]
+    IF    '${element_present}' == 'True'
+        CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
+        Sleep    2
+        Take Screenshot    20_User_defined.jpg
+    ELSE
+        Log    No spam user window exists
+        
+    END
+    # CustomSapGuiLibrary.is spam user defined existing    wnd[1]    wnd[1]/tbar[0]/btn[0]        
+    # Sleep    2
+    # Take Screenshot    20_User_defined.jpg
+    ${title}    Get Window Title    wnd[0]
+    IF    '${title}' == 'Transport requests in TMS which should be imported before'
+        Click Element    wnd[0]/tbar[1]/btn[20]
+        Sleep    2
+        Take Screenshot    23_Transport_window.jpg
+    ELSE
+        Log    ${title}
+    END
+    ${element_present}    Element Should Be Present    wnd[1]
+    IF    '${element_present}' == 'True'
+        CustomSapGuiLibrary.Window Handling    wnd[1]    Information    wnd[1]/tbar[0]/btn[30]
+        Sleep    2
+        Take Screenshot    21_Information_handling.jpg Keyword
+    ELSE
+        Log    No window handling exists
+    END
+    # CustomSapGuiLibrary.Window Handling    wnd[1]    Information    wnd[1]/tbar[0]/btn[30]
+    # Sleep    2
+    # Take Screenshot    21_Information_handling.jpg
  
 Confirm Queue
     ${cell_text_1}    CustomSapGuiLibrary.Get Finish Cell Text1    ${finish_str}    ${interrupt_str1}    ${transport_id}    ${button_id}    ${status_line}    ${refresh_id}    ${startoption_spam_id}    ${radio_button_id}    ${startoptionok_id}    ${Import_id}    ${error_button_id}
     Log    ${cell_text_1}
     Sleep   2
     Take Screenshot    22_Confirmed_queue.jpg
+    ${title}    Get Window Title    wnd[0]
+    IF    '${title}' == 'Transport requests in TMS which should be imported before'
+        Click Element    wnd[0]/tbar[1]/btn[20]
+        Sleep    2
+        Take Screenshot    23_Transport_window.jpg
+    ELSE
+        Log    ${title}
+    END
     CustomSapGuiLibrary.No Queue Pending    ${no_Queue_id}
     Sleep   2
     ${title}    Get Window Title    wnd[0]
     IF    '${title}' == 'Transport requests in TMS which should be imported before'
         Click Element    wnd[0]/tbar[1]/btn[20]
         Sleep    2
+        Take Screenshot    24_Transport_window.jpg
     ELSE
         Log    ${title}
     END
