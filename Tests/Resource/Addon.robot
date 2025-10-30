@@ -85,11 +85,23 @@ Get Cell Text From SAP Table
  
 Patch selection for the Addon
     IF    '${symvar('Saint_Patch_Checker')}' == 'Yes'
-            ${result}    Saint Select    wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0300/tabsQUEUE_COMP/tabpQUEUE_COMP_FC2/ssubQUEUE_COMP_SCA:SAPLSAINT_UI:0303/cmbGV_01_PATCH_REQ    ${symvar('Patch')}
+        ${result}    Saint Select    wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0300/tabsQUEUE_COMP/tabpQUEUE_COMP_FC2/ssubQUEUE_COMP_SCA:SAPLSAINT_UI:0303/cmbGV_01_PATCH_REQ    ${symvar('Patch')}
         IF    '${result}' == 'Input saint patch not available.'
             Log To Console    message=**gbStart**saint_select_patch**splitKeyValue**${result} ${symvar('Patch')}**gbEnd**
             Log To Console    message=${result} ${symvar('Patch')}
             Fail
+        ELSE IF    '${result}' == 'Successfully updated key for patch_id.'
+            Sleep    2
+            Take Screenshot    07_select_support_Package.jpg  
+            Click Element    wnd[0]/usr/btnBUTTON_NEXT
+            Sleep    2
+            Take Screenshot    08_continue to add modification adjustment transport.jpg
+            Click Element    wnd[0]/usr/btnBUTTON_NEXT
+            Sleep    2
+            Take Screenshot    09_Add modification adjustment transport and continue.jpg
+            Click Element    wnd[1]/usr/btnBUTTON_2
+            Sleep    2
+            Take Screenshot    10_start options.jpg
         END
     ELSE IF    '${symvar('Saint_Patch_Checker')}' == 'No'
         Sleep    2
