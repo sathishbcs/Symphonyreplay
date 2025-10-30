@@ -1,0 +1,27 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam Update                                                        
+==============================================================================
+Check_Spam_update                                                       
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_Update.robot:9
+    T:  Check_Spam_update    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_Update.robot:12
+      Loading package    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Update.robot:73
+      Click Element    wnd[0]/mbar/menu[0]/menu[0]/menu[1]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[0]/mbar/menu[0]/menu[0]/menu[1]'
+------------------------------------------------------------------------------
+Tests.Test spam Update                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\9d09ceff-410c-457e-95aa-00b02c537fba\pabot_results\0\Output.xml

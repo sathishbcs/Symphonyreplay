@@ -1320,8 +1320,15 @@ class CustomSapGuiLibrary:
  
            
  
-    def saint_select(self, patch_id, Patch):    
-        self.session.findById(patch_id).key = Patch
+    # def saint_select(self, patch_id, Patch):    
+    #     self.session.findById(patch_id).key = Patch
+    def saint_select(self, patch_id, Patch):
+        try:
+            element = self.session.findById(patch_id)
+            element.key = Patch
+            return f"Successfully updated key for patch_id: {patch_id}"
+        except Exception as e:
+            return f"Input saint patch not available. Failed to find element with patch_id: {patch_id}."
     
     def multiple_logon_handling(self, logon_window_id, option):  
         try:

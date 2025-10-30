@@ -1,6 +1,10 @@
 EXE_PAD = "C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.exe"
-Connection_Name = "SHQ"
+Connection_Name = "REC S4 Development"
 SAP_CLIENT = "000"
 SAP_USER = "DDIC"
-search_comp = '["ST-A/PI", "ST-PI"]'
-search_patch = '["SAPKITABC9", "SAPK-74031INSTPI"]'
+addOn = "ST-A/PI"
+Patch = "KITABCA.SAR"
+patch_comp = "$patch_comp"
+patch_vers = "$patch_vers"
+search_comp = "$search_comp"
+search_patch = "$search_patch"

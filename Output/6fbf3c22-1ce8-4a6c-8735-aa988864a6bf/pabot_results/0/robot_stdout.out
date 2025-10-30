@@ -1,0 +1,41 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test spam Update                                                        
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_Update.robot:4
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Update.robot:38
+      Open Connection    ${symvar('Connection_Name')}
+      |  ${symvar('Connection_Name')} = PRD (str)
+______________________________________________________________________________
+Check_Spam_update                                                     | FAIL |
+Parent suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_spam_Update.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Spam_Update.robot:115
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test spam Update                                                | FAIL |
+Suite setup failed:
+com_error: (-2147352567, 'Exception occurred.', (614, 'saplogon', 'The enumerator of the collection cannot find an element with the specified index.', 'C:\\Program Files\\SAP\\FrontEnd\\SAPGUI\\saplogon.HLP', 393215, 0), None)
+
+Also suite teardown failed:
+AttributeError: 'int' object has no attribute 'findById'
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\6fbf3c22-1ce8-4a6c-8735-aa988864a6bf\pabot_results\0\Output.xml
