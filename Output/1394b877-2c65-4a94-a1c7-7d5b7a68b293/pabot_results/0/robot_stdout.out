@@ -1,0 +1,49 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Addon                                                              
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:4
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:36
+      Open Connection    ${symvar('Connection_Name')}
+      |  ${symvar('Connection_Name')} = LMD (str)
+______________________________________________________________________________
+Check_Saint Transation Code                                           | FAIL |
+Parent suite setup failed:
+ValueError: Cannot open connection 'LMD', please check connection name.
+------------------------------------------------------------------------------
+Selecting the path for the Addon                                      | FAIL |
+Parent suite setup failed:
+ValueError: Cannot open connection 'LMD', please check connection name.
+------------------------------------------------------------------------------
+Process Until Finish Button Visible                                   | FAIL |
+Parent suite setup failed:
+ValueError: Cannot open connection 'LMD', please check connection name.
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:5
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:147
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test Addon                                                      | FAIL |
+Suite setup failed:
+ValueError: Cannot open connection 'LMD', please check connection name.
+
+Also suite teardown failed:
+AttributeError: 'int' object has no attribute 'findById'
+
+3 tests, 0 passed, 3 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\1394b877-2c65-4a94-a1c7-7d5b7a68b293\pabot_results\0\Output.xml

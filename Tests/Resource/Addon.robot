@@ -84,10 +84,14 @@ Get Cell Text From SAP Table
     Take Screenshot    06_continue_to_start_calculation_package.jpg
  
 Patch selection for the Addon
-    ${result}    Saint Select    wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0300/tabsQUEUE_COMP/tabpQUEUE_COMP_FC2/ssubQUEUE_COMP_SCA:SAPLSAINT_UI:0303/cmbGV_01_PATCH_REQ    ${symvar('Patch')}  
-    IF    'Input saint patch not available' in '${result.lower()}'
+    ${result}    Saint Select    wnd[0]/usr/subLIST_AREA:SAPLSAINT_UI:0300/tabsQUEUE_COMP/tabpQUEUE_COMP_FC2/ssubQUEUE_COMP_SCA:SAPLSAINT_UI:0303/cmbGV_01_PATCH_REQ    ${symvar('Patch')}
+    ${status}    Run Keyword And Return Status    Should Contain    ${result}    input saint patch not available
+    IF    ${status}
         Log To Console    message=**gbStart**saint_select_patch**splitKeyValue**${result}**gbEnd**
+        Log To Console    message=${result}
+        Fail
     END
+ 
     Sleep    2
     Take Screenshot    07_select_support_Package.jpg  
     Click Element    wnd[0]/usr/btnBUTTON_NEXT
