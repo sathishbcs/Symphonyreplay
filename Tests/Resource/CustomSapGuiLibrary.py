@@ -1328,7 +1328,7 @@ class CustomSapGuiLibrary:
             element.key = Patch
             return f"Successfully updated key for patch_id: {patch_id}"
         except Exception as e:
-            return f"Input saint patch not available. Failed to find element with patch_id: {patch_id}."
+            return f"Input saint patch not available."
     
     def multiple_logon_handling(self, logon_window_id, option):  
         try:
