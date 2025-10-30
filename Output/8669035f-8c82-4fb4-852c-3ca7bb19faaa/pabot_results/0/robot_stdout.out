@@ -1,0 +1,49 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Addon                                                              
+==============================================================================
+Check_Saint Transation Code                                           | PASS |
+------------------------------------------------------------------------------
+Selecting the path for the Addon                                      **gbStart**saint_select_patch**splitKeyValue**Input saint patch not available. KITABCA.SAR**gbEnd**
+Input saint patch not available. KITABCA.SAR
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:13
+    T:  Selecting the path for the Addon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:14
+      Patch selection for the Addon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:88
+      '${result}' == 'Input saint patch not available.'    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:91
+      Fail    
+______________________________________________________________________________
+| FAIL |
+AssertionError
+------------------------------------------------------------------------------
+Process Until Finish Button Visible                                     
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:19
+    T:  Process Until Finish Button Visible    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Test_Addon.robot:20
+      Process Until Finish Button Visible    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Replay\Symphonyreplay\Tests\Resource\Addon.robot:146
+      Click Element    wnd[1]/tbar[0]/btn[27]
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[27]'
+------------------------------------------------------------------------------
+Tests.Test Addon                                                      | FAIL |
+3 tests, 1 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+3 tests, 1 passed, 2 failed
+==============================================================================
+Output:  D:\Replay\Symphonyreplay\Output\8669035f-8c82-4fb4-852c-3ca7bb19faaa\pabot_results\0\Output.xml
